@@ -43,6 +43,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ClassCapaEntidades">
+      <HintPath>..\ClassCapaEntidades\bin\Debug\ClassCapaEntidades.dll</HintPath>
+    </Reference>
+    <Reference Include="ClassLogicaNegocioTaller">
+      <HintPath>..\ClassLogicaNegocioTaller\bin\Debug\ClassLogicaNegocioTaller.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -67,9 +73,41 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Clientes\AccionesCliente.aspx" />
+    <Content Include="Clientes\AgregarCliente.aspx" />
+    <Content Include="Clientes\Clientes.aspx" />
+    <Content Include="Index.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clientes\AccionesCliente.aspx.cs">
+      <DependentUpon>AccionesCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Clientes\AccionesCliente.aspx.designer.cs">
+      <DependentUpon>AccionesCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes\AgregarCliente.aspx.cs">
+      <DependentUpon>AgregarCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Clientes\AgregarCliente.aspx.designer.cs">
+      <DependentUpon>AgregarCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes\Clientes.aspx.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Clientes\Clientes.aspx.designer.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

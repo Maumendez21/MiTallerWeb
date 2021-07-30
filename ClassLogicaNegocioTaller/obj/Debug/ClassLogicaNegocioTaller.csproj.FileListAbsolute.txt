@@ -1,0 +1,11 @@
+D:\VisualStudio\Desarrollo Wrb Integral\MiTaller\ClassLogicaNegocioTaller\bin\Debug\ClassLogicaNegocioTaller.dll
+D:\VisualStudio\Desarrollo Wrb Integral\MiTaller\ClassLogicaNegocioTaller\bin\Debug\ClassLogicaNegocioTaller.pdb
+D:\VisualStudio\Desarrollo Wrb Integral\MiTaller\ClassLogicaNegocioTaller\obj\Debug\ClassLogicaNegocioTaller.csprojAssemblyReference.cache
+D:\VisualStudio\Desarrollo Wrb Integral\MiTaller\ClassLogicaNegocioTaller\obj\Debug\ClassLogicaNegocioTaller.csproj.CoreCompileInputs.cache
+D:\VisualStudio\Desarrollo Wrb Integral\MiTaller\ClassLogicaNegocioTaller\obj\Debug\ClassLogicaNegocioTaller.dll
+D:\VisualStudio\Desarrollo Wrb Integral\MiTaller\ClassLogicaNegocioTaller\obj\Debug\ClassLogicaNegocioTaller.pdb
+D:\VisualStudio\Desarrollo Wrb Integral\MiTaller\ClassLogicaNegocioTaller\bin\Debug\ClassAccesoDatos.dll
+D:\VisualStudio\Desarrollo Wrb Integral\MiTaller\ClassLogicaNegocioTaller\bin\Debug\ClassCapaEntidades.dll
+D:\VisualStudio\Desarrollo Wrb Integral\MiTaller\ClassLogicaNegocioTaller\bin\Debug\ClassAccesoDatos.pdb
+D:\VisualStudio\Desarrollo Wrb Integral\MiTaller\ClassLogicaNegocioTaller\bin\Debug\ClassCapaEntidades.pdb
+D:\VisualStudio\Desarrollo Wrb Integral\MiTaller\ClassLogicaNegocioTaller\obj\Debug\ClassLogicaNegocioTaller.csproj.CopyComplete
