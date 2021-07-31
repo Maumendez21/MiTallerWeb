@@ -4,3 +4,8 @@ D:\VisualStudio\Desarrollo Wrb Integral\MiTaller\ClassAccesoDatos\obj\Debug\Clas
 D:\VisualStudio\Desarrollo Wrb Integral\MiTaller\ClassAccesoDatos\obj\Debug\ClassAccesoDatos.csproj.CoreCompileInputs.cache
 D:\VisualStudio\Desarrollo Wrb Integral\MiTaller\ClassAccesoDatos\obj\Debug\ClassAccesoDatos.dll
 D:\VisualStudio\Desarrollo Wrb Integral\MiTaller\ClassAccesoDatos\obj\Debug\ClassAccesoDatos.pdb
+C:\Users\davedrew\Desktop\MiTallerWeb\ClassAccesoDatos\bin\Debug\ClassAccesoDatos.dll
+C:\Users\davedrew\Desktop\MiTallerWeb\ClassAccesoDatos\bin\Debug\ClassAccesoDatos.pdb
+C:\Users\davedrew\Desktop\MiTallerWeb\ClassAccesoDatos\obj\Debug\ClassAccesoDatos.csproj.CoreCompileInputs.cache
+C:\Users\davedrew\Desktop\MiTallerWeb\ClassAccesoDatos\obj\Debug\ClassAccesoDatos.dll
+C:\Users\davedrew\Desktop\MiTallerWeb\ClassAccesoDatos\obj\Debug\ClassAccesoDatos.pdb

@@ -77,6 +77,7 @@
     <Content Include="Clientes\AgregarCliente.aspx" />
     <Content Include="Clientes\Clientes.aspx" />
     <Content Include="Index.aspx" />
+    <Content Include="Mecanico\Mecanico.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -107,6 +108,13 @@
     </Compile>
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mecanico\Mecanico.aspx.cs">
+      <DependentUpon>Mecanico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mecanico\Mecanico.aspx.designer.cs">
+      <DependentUpon>Mecanico.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

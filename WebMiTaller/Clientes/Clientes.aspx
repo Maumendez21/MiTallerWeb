@@ -12,7 +12,9 @@
 
     <nav class="navbar navbar-dark bg-dark">
          <div class="container-fluid">
-          <span class="navbar-brand" href="../index.aspx">Mi Taller</span>
+          <a class="navbar-brand" href="../index.aspx">
+        <img src="/images/logo.png" alt="" width="110" height="60">
+    </a>
           <span>Clientes</span>
          </div>
     </nav>
