@@ -6,7 +6,6 @@ D:\VisualStudio\Desarrollo Wrb Integral\MiTaller\ClassCapaEntidades\obj\Debug\Cl
 D:\VisualStudio\Desarrollo Wrb Integral\MiTaller\ClassCapaEntidades\obj\Debug\ClassCapaEntidades.pdb
 C:\Users\davedrew\Desktop\MiTallerWeb\ClassCapaEntidades\bin\Debug\ClassCapaEntidades.dll
 C:\Users\davedrew\Desktop\MiTallerWeb\ClassCapaEntidades\bin\Debug\ClassCapaEntidades.pdb
-C:\Users\davedrew\Desktop\MiTallerWeb\ClassCapaEntidades\obj\Debug\ClassCapaEntidadesTaller.csprojAssemblyReference.cache
 C:\Users\davedrew\Desktop\MiTallerWeb\ClassCapaEntidades\obj\Debug\ClassCapaEntidadesTaller.csproj.CoreCompileInputs.cache
 C:\Users\davedrew\Desktop\MiTallerWeb\ClassCapaEntidades\obj\Debug\ClassCapaEntidades.dll
 C:\Users\davedrew\Desktop\MiTallerWeb\ClassCapaEntidades\obj\Debug\ClassCapaEntidades.pdb

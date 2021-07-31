@@ -30,7 +30,7 @@ namespace ClassLogicaNegocioTaller
             if (mechanic != null)
             {
                 //Inicialización de los parametros SQL
-                SqlParameter[] parameters = new SqlParameter[4];
+                SqlParameter[] parameters = new SqlParameter[5];
                 parameters[0] = new SqlParameter 
                 { 
                     ParameterName = "Nombre", 
@@ -106,26 +106,19 @@ namespace ClassLogicaNegocioTaller
             Mecanico _mech = null;
             SqlDataReader readerData = null;
 
-            //Inicialización del parametro
-            SqlParameter id = new SqlParameter
-            {
-                ParameterName = "id_Tecnico",
-                SqlDbType = System.Data.SqlDbType.Int,
-                Direction = System.Data.ParameterDirection.Input,
-                Value = _id
-            };
+        
 
             //Primera validación si el dato(ID) viene null
             if (_id != null)
             {
                 _connec = myCnn.AbrirConexion(ref mssg_);
-                QuerySQL = "Select * From Mecanico where id_Tecnico = @id_Tecnico";
+                QuerySQL = "Select * From Mecanico where id_Tecnico = " + _id;
                 readerData = myCnn.ConsultarReader(QuerySQL, _connec, ref mssg_);
                
                 //Verificamos que tenga datos el DataReader
                 if (readerData != null)
                 {
-
+                    _mech = new Mecanico();
                     //Reccoremos DataReader para llenar nuestro objeto
                     while (readerData.Read())
                     {
@@ -247,7 +240,7 @@ namespace ClassLogicaNegocioTaller
             if (_mechanic != null && id_ != null)
             {
                 //Inicialización de los parametros 
-                SqlParameter[] parameters = new SqlParameter[4];
+                SqlParameter[] parameters = new SqlParameter[6];
                 parameters[0] = new SqlParameter
                 {
                     ParameterName = "Nombre_",
@@ -295,7 +288,7 @@ namespace ClassLogicaNegocioTaller
 
 
                 //Parametro opcional para el ID, se crea para que sea más segura la sentencia
-                SqlParameter id = new SqlParameter
+                parameters[5] = new SqlParameter
                 {
                     ParameterName = "id_",
                     SqlDbType = System.Data.SqlDbType.Int,
@@ -324,7 +317,9 @@ namespace ClassLogicaNegocioTaller
             //Variables locales
             string Sentence = "";
             Boolean output = false;
-            SqlParameter id_ = new SqlParameter
+
+            SqlParameter[] paramID = new SqlParameter[1];
+            paramID[0] = new SqlParameter()
             {
                 ParameterName = "_id",
                 SqlDbType = System.Data.SqlDbType.Int,
@@ -336,7 +331,7 @@ namespace ClassLogicaNegocioTaller
             if (id != null)
             {
                 Sentence = "Delete From Mecanico where id_Tecnico = @_id";
-                output = myCnn.ModificaBDInsegura(Sentence, myCnn.AbrirConexion(ref message_), ref message_);
+                output = myCnn.ModificiaParametros(Sentence, myCnn.AbrirConexion(ref message_), ref message_, paramID);
             }
             else
             {

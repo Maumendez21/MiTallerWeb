@@ -77,7 +77,6 @@ C:\Users\davedrew\Desktop\MiTallerWeb\WebMiTaller\bin\ClassCapaEntidades.pdb
 C:\Users\davedrew\Desktop\MiTallerWeb\WebMiTaller\bin\ClassLogicaNegocioTaller.pdb
 C:\Users\davedrew\Desktop\MiTallerWeb\WebMiTaller\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\davedrew\Desktop\MiTallerWeb\WebMiTaller\bin\ClassAccesoDatos.pdb
-C:\Users\davedrew\Desktop\MiTallerWeb\WebMiTaller\obj\Debug\WebMiTaller.csprojAssemblyReference.cache
 C:\Users\davedrew\Desktop\MiTallerWeb\WebMiTaller\obj\Debug\WebMiTaller.csproj.CoreCompileInputs.cache
 C:\Users\davedrew\Desktop\MiTallerWeb\WebMiTaller\obj\Debug\WebMiTaller.csproj.CopyComplete
 C:\Users\davedrew\Desktop\MiTallerWeb\WebMiTaller\obj\Debug\WebMiTaller.dll

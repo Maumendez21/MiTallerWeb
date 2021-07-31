@@ -53,7 +53,7 @@ namespace WebMiTaller.Mecanico
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../index.aspx");
+            Response.Redirect("Mecanico.aspx");
         }
 
         protected void btnActualizar_Click(object sender, EventArgs e)
@@ -81,6 +81,7 @@ namespace WebMiTaller.Mecanico
             //Reflejado el nuevo registro en nuestro control GridView
             if (flag)
             {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "RESPONSETRUE", "msgbox(`Correcto1`, `" + mssg + "`, `success`)", true);
                 Response.Redirect("Mecanico.aspx");
             }
             else
@@ -106,6 +107,7 @@ namespace WebMiTaller.Mecanico
             //Y se vere reflejado el cambio en nuestro control GridView
             if (flag_)
             {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "RESPONSETRUE", "msgbox(`Correcto1`, `" + message_ + "`, `success`)", true);
                 Response.Redirect("Mecanico.aspx");
             }
             else
