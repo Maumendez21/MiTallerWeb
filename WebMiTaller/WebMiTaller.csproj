@@ -77,7 +77,9 @@
     <Content Include="Clientes\AgregarCliente.aspx" />
     <Content Include="Clientes\Clientes.aspx" />
     <Content Include="Index.aspx" />
+    <Content Include="Mecanico\agregaTecnico.aspx" />
     <Content Include="Mecanico\Mecanico.aspx" />
+    <Content Include="Mecanico\VerMecanico.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -109,12 +111,26 @@
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Mecanico\agregaTecnico.aspx.cs">
+      <DependentUpon>agregaTecnico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mecanico\agregaTecnico.aspx.designer.cs">
+      <DependentUpon>agregaTecnico.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Mecanico\Mecanico.aspx.cs">
       <DependentUpon>Mecanico.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mecanico\Mecanico.aspx.designer.cs">
       <DependentUpon>Mecanico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mecanico\VerMecanico.aspx.cs">
+      <DependentUpon>VerMecanico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mecanico\VerMecanico.aspx.designer.cs">
+      <DependentUpon>VerMecanico.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

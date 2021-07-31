@@ -26,10 +26,10 @@ namespace ClassLogicaNegocioTaller
             string sentence = "";
             SqlConnection connection = null;
 
-            //Se define si viene vacío o con datos el objeto.
+            //Validamos si viene vacío o no el objeto.
             if (mechanic != null)
             {
-                //Inicialización de los parametros 
+                //Inicialización de los parametros SQL
                 SqlParameter[] parameters = new SqlParameter[4];
                 parameters[0] = new SqlParameter 
                 { 
