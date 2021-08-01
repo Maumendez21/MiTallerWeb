@@ -9,3 +9,8 @@ C:\Users\davedrew\Desktop\MiTallerWeb\ClassAccesoDatos\bin\Debug\ClassAccesoDato
 C:\Users\davedrew\Desktop\MiTallerWeb\ClassAccesoDatos\obj\Debug\ClassAccesoDatos.csproj.CoreCompileInputs.cache
 C:\Users\davedrew\Desktop\MiTallerWeb\ClassAccesoDatos\obj\Debug\ClassAccesoDatos.dll
 C:\Users\davedrew\Desktop\MiTallerWeb\ClassAccesoDatos\obj\Debug\ClassAccesoDatos.pdb
+C:\MiTallerWeb\ClassAccesoDatos\bin\Debug\ClassAccesoDatos.dll
+C:\MiTallerWeb\ClassAccesoDatos\bin\Debug\ClassAccesoDatos.pdb
+C:\MiTallerWeb\ClassAccesoDatos\obj\Debug\ClassAccesoDatos.csproj.CoreCompileInputs.cache
+C:\MiTallerWeb\ClassAccesoDatos\obj\Debug\ClassAccesoDatos.dll
+C:\MiTallerWeb\ClassAccesoDatos\obj\Debug\ClassAccesoDatos.pdb

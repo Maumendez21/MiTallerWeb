@@ -9,3 +9,9 @@ C:\Users\davedrew\Desktop\MiTallerWeb\ClassCapaEntidades\bin\Debug\ClassCapaEnti
 C:\Users\davedrew\Desktop\MiTallerWeb\ClassCapaEntidades\obj\Debug\ClassCapaEntidadesTaller.csproj.CoreCompileInputs.cache
 C:\Users\davedrew\Desktop\MiTallerWeb\ClassCapaEntidades\obj\Debug\ClassCapaEntidades.dll
 C:\Users\davedrew\Desktop\MiTallerWeb\ClassCapaEntidades\obj\Debug\ClassCapaEntidades.pdb
+C:\MiTallerWeb\ClassCapaEntidades\bin\Debug\ClassCapaEntidades.dll
+C:\MiTallerWeb\ClassCapaEntidades\bin\Debug\ClassCapaEntidades.pdb
+C:\MiTallerWeb\ClassCapaEntidades\obj\Debug\ClassCapaEntidadesTaller.csprojAssemblyReference.cache
+C:\MiTallerWeb\ClassCapaEntidades\obj\Debug\ClassCapaEntidadesTaller.csproj.CoreCompileInputs.cache
+C:\MiTallerWeb\ClassCapaEntidades\obj\Debug\ClassCapaEntidades.dll
+C:\MiTallerWeb\ClassCapaEntidades\obj\Debug\ClassCapaEntidades.pdb

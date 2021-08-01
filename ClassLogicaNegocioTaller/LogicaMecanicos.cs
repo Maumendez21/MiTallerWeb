@@ -13,7 +13,7 @@ namespace ClassLogicaNegocioTaller
 {
     public class LogicaMecanicos
     {
-        private AccesoSQL myCnn = new AccesoSQL(@"Server=LAPTOP-822RV6A8;Database=MiTaller2021;Integrated Security=true;");
+        private AccesoSQL myCnn = new AccesoSQL(@"Server=DESKTOP-FFJP8C6;Database=MiTaller2021;Integrated Security=true;");
 
 
 

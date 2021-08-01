@@ -46,7 +46,8 @@
     <Reference Include="ClassCapaEntidades">
       <HintPath>..\ClassCapaEntidades\bin\Debug\ClassCapaEntidades.dll</HintPath>
     </Reference>
-    <Reference Include="ClassLogicaNegocioTaller">
+    <Reference Include="ClassLogicaNegocioTaller, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\ClassLogicaNegocioTaller\bin\Debug\ClassLogicaNegocioTaller.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
@@ -73,6 +74,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Auto\AccionesAuto.aspx" />
+    <Content Include="Auto\AgregarAuto.aspx" />
+    <Content Include="Auto\Autos.aspx" />
     <Content Include="Clientes\AccionesCliente.aspx" />
     <Content Include="Clientes\AgregarCliente.aspx" />
     <Content Include="Clientes\Clientes.aspx" />
@@ -83,6 +87,27 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Auto\AccionesAuto.aspx.cs">
+      <DependentUpon>AccionesAuto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Auto\AccionesAuto.aspx.designer.cs">
+      <DependentUpon>AccionesAuto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Auto\AgregarAuto.aspx.cs">
+      <DependentUpon>AgregarAuto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Auto\AgregarAuto.aspx.designer.cs">
+      <DependentUpon>AgregarAuto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Auto\Autos.aspx.cs">
+      <DependentUpon>Autos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Auto\Autos.aspx.designer.cs">
+      <DependentUpon>Autos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Clientes\AccionesCliente.aspx.cs">
       <DependentUpon>AccionesCliente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -13,7 +13,7 @@ namespace ClassLogicaNegocioTaller
 {
     public class LogicaCliente
     {
-        private AccesoSQL db = new AccesoSQL(@"Server=LAPTOP-822RV6A8;Database=MiTaller2021;Integrated Security=true;");
+        private AccesoSQL db = new AccesoSQL(@"Server=DESKTOP-FFJP8C6;Database=MiTaller2021;Integrated Security=true;");
 
         public Boolean InsertClient(Cliente nuevo, ref string result)
         {
