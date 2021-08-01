@@ -11,15 +11,39 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </head>
+<style>
+    .nav-link 
+    {
+    color: white !important;
+    }
+
+</style>
+
 <body>
-    <nav class="navbar navbar-dark bg-dark">
-         <div class="container-fluid">
-           <a class="navbar-brand" href="../index.aspx">
-        <img src="/images/logo.png" alt="" width="110" height="60">
+   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid" style="font-size: 20px;">
+    <a class="navbar-brand m-1" href="../index.aspx">
+        <img class="ms-4" src="/images/logo.png" alt="" width="110" height="60"> 
     </a>
-          <span>Clientes</span>
-         </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse"  id="navbarNav">
+      <ul class="navbar-nav ms-4" >
+        <li class="nav-item">
+          <a class="nav-link" href="Clientes.aspx">Clientes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Autos</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="../Mecanico/Mecanico.aspx">Mecanicos</a>
+        </li>
+      </ul>
+    </div>
+  </div>
     </nav>
+
     <form id="form1" class="container" runat="server">
         <div class="row mt-4">
                 <asp:Label ID="Label1" runat="server" Text="Si los autos  del cliente son de un corporativo o una empresa proporcionar Correo y Telefono de la Empresa en lugar del personal."></asp:Label>

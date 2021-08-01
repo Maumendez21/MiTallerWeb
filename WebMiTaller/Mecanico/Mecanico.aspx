@@ -8,21 +8,46 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Apartado de Mecanicos</title>
 </head>
+
+    <style>
+    .nav-link 
+    {
+    color: white !important;
+    }
+
+</style>
 <body>
 
-      <nav class="navbar navbar-dark bg-dark">
-         <div class="container-fluid">
-           <a class="navbar-brand" href="../index.aspx">
-        <img src="/images/logo.png" alt="" width="110" height="60">
-           </a>
-         </div>
-     </nav>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid" style="font-size: 20px;">
+    <a class="navbar-brand m-1" href="../index.aspx">
+        <img class="ms-4" src="/images/logo.png" alt="" width="110" height="60"> 
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse"  id="navbarNav">
+      <ul class="navbar-nav ms-4" >
+        <li class="nav-item">
+          <a class="nav-link" href="../Clientes/Clientes.aspx">Clientes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Autos</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="Mecanico.aspx">Mecanicos</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+    </nav>
 
     <div class="row mt-4">
         <div class="col-md-12">
     <form id="form1" runat="server" class="container">
         <div class="col-lg-12">
                  <h1>Mecanicos</h1>
+            <p>En este apartado podras consultar todo los mecanicos disponibles</p>
                  <asp:Button CssClass="btn btn-danger mb-3" ID="btnBack" runat="server" Text="Regresar" OnClick="btnBack_Click" />
                  <asp:Button CssClass="btn btn-primary mb-3" ID="btnAddMech" runat="server" Text="Agregar Mecanico" OnClick="btnAddMech_Click"  />
 
