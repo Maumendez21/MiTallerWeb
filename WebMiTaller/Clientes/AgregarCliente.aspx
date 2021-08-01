@@ -46,29 +46,58 @@
 
     <form id="form1" class="container" runat="server">
         <div class="row mt-4">
-                <asp:Label ID="Label1" runat="server" Text="Si los autos  del cliente son de un corporativo o una empresa proporcionar Correo y Telefono de la Empresa en lugar del personal."></asp:Label>
-            <div class="col-md-12" >
-
-                Nombre: 
+            <h4>Registrar Cliente</h4>
+            <p>En este apartado podras realizar el registro de los clientes</p>
+             <asp:Label ID="Label1" runat="server" Text="Si los autos  del cliente son de un corporativo o una empresa proporcionar Correo y Telefono de la Empresa en lugar del personal."></asp:Label>
+           
+             <div class="col-md-6 mt-1" >
+            <div class="card text-center">
+  <div class="card-header">
+    <h4>Información del Cliente</h4>
+  </div>
+  <div class="card-body">
+                <label for="txtNombre" style="font-weight: bold">Nombre:</label>
                 <asp:TextBox CssClass="form-control" ID="txtNombre" runat="server"></asp:TextBox>
-                Apellido Paterno: 
+                <label for="txtApellidoP" style="font-weight: bold">Apellido Paterno:</label>
                 <asp:TextBox CssClass="form-control" ID="txtApellidoP" runat="server"></asp:TextBox>
-                Apellido Materno:
+                <label for="txtApellidoM" style="font-weight: bold">Apellido Materno:</label>
                 <asp:TextBox CssClass="form-control" ID="txtApellidoM" runat="server"></asp:TextBox>
-                Telefono Personal: 
+                <label for="txtCelular" style="font-weight: bold">Telefono:</label>
                 <asp:TextBox  CssClass="form-control" ID="txtCelular" runat="server"></asp:TextBox>
-                Correo: 
-                <asp:TextBox  CssClass="form-control" ID="txtCorreo" runat="server"></asp:TextBox>
-                Telefono Empresa: 
+               <label for="txtCorreo" style="font-weight: bold">Correo Electronico:</label>
+               <asp:TextBox  CssClass="form-control" ID="txtCorreo" runat="server"></asp:TextBox>
+               <label for="txtCelularCorpo" style="font-weight: bold">Telefono de Empresa:</label>
                 <asp:TextBox  CssClass="form-control" ID="txtCelularCorpo" runat="server"></asp:TextBox>
-                Correo Empresa: 
+               <label for="txtCorreoCorpo" style="font-weight: bold">Correo de Empresa:</label>
                 <asp:TextBox  CssClass="form-control" ID="txtCorreoCorpo" runat="server"></asp:TextBox>
 
-                <asp:Button CssClass="btn btn-primary mt-3 mb-3" ID="btnAddCliente" runat="server" Text="Agregar" OnClick="btnAddCliente_Click" />
+  </div>
+  <div class="card-footer text-muted">
+    Recuerda no dejar recuadros vacíos
+  </div>
+</div>
+
+
+</div>
+            <div class="col-md-6 mt-1" >
+                <div class="card text-center">
+    <div class="card-header">
+    <h4>Acciones</h4>
+    </div>
+    <div class="card-body">
+   <asp:Button CssClass="btn btn-primary mt-3 mb-3" ID="btnAddCliente" runat="server" Text="Agregar" OnClick="btnAddCliente_Click" />
                 <asp:Button CssClass="btn btn-danger mt-3 mb-3" ID="btnCancel" runat="server" Text="Cancelar" OnClick="btnCancel_Click" />
+       
+  </div>
+  <div class="card-footer text-muted">
+    Estas acciones no podran anularse una vez realizadas
+  </div>
+</div>
+</div>
 
 
-            </div>
+
+
         </div>
     </form>
 

@@ -47,6 +47,7 @@
             <form id="form1" class="container" runat="server">
              <div>
                  <h1>Clientes</h1>
+                  <p>En este apartado podras consultar todo los clientes registrados</p>
                  <asp:Button CssClass="btn btn-danger mb-3" ID="btnRegresar" runat="server" Text="Regresar" OnClick="btnRegresar_Click" />
                  <asp:Button CssClass="btn btn-primary mb-3" ID="btnAddClient" runat="server" Text="Agregar Cliente" OnClick="btnAddClient_Click" />
 
