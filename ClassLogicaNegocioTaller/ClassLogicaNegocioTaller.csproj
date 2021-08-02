@@ -47,8 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LogicaAuto.cs" />
     <Compile Include="LogicaCliente.cs" />
     <Compile Include="LogicaMecanicos.cs" />
+    <Compile Include="LogicaReparacion.cs" />
+    <Compile Include="LogicaRevision.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

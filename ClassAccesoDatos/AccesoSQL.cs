@@ -240,7 +240,7 @@ namespace ClassAccesoDatos
                 }
                 catch (Exception w)
                 {
-                    mensaje = "Hubo un error! :(";
+                    mensaje = w.Message +  "";
                     salida = false;
 
 

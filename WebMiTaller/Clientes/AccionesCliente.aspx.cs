@@ -69,12 +69,16 @@ namespace WebMiTaller.Clientes
             recibe = objLogClient.UpdateClient(temp, id, ref resp);
             if (recibe)
             {
-                Response.Redirect("Clientes.aspx");
+                
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "SUCCESCLIENT", "msgbox(`Correcto`, `" + resp + "`, ` success`, ` Clientes.aspx` )", true);
+               
             }
             else
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "ERRORCLIENT", "msgbox(`Error`, `" + resp + "`, `error`)", true);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "ERRORCLIENT", "msgbox(`Error`, `" + resp + "`, `error`, ` Clientes/AccionesClientes.aspx`)", true);
             }
+
+            
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
@@ -85,12 +89,15 @@ namespace WebMiTaller.Clientes
 
             if (recibe)
             {
-                Response.Redirect("Clientes.aspx");
+                
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "ERRORCLIENT", "msgbox(`Error`, `" + resp + "`, `error`)", true);
+                
             }
             else
             {
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "ERRORdelete", "msgbox(`Error`, `" + resp + "`, `error`)", true);
             }
+
 
         }
     }

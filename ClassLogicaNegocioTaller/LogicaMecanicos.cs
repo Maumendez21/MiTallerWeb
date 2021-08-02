@@ -13,7 +13,14 @@ namespace ClassLogicaNegocioTaller
 {
     public class LogicaMecanicos
     {
-        private AccesoSQL myCnn = new AccesoSQL(@"Server=LAPTOP-822RV6A8;Database=MiTaller2021;Integrated Security=true;");
+        //Cadena de Conexión Mauro
+        //private AccesoSQL db = new AccesoSQL(@"Server=DESKTOP-10SGSAI\SQLEXPRESS;Database=MiTaller2021;Integrated Security=true;");
+
+        //Cadena de Conexión David
+        private AccesoSQL db = new AccesoSQL(@"Server=LAPTOP-822RV6A8;Database=MiTaller2021;Integrated Security=true;");
+
+        //Cadena de Conexión Juan
+        //private AccesoSQL db = new AccesoSQL(@"Server=DESKTOP-FFJP8C6;Database=MiTaller2021;Integrated Security=true;");
 
 
 
@@ -78,9 +85,9 @@ namespace ClassLogicaNegocioTaller
 
 
                 //Se abre conexión y se realiza la inserción en la tabla Mecanico
-                connection = myCnn.AbrirConexion(ref mssg);
+                connection = db.AbrirConexion(ref mssg);
                 sentence = "Insert Into Mecanico Values(@Nombre, @App, @Apm, @Celular, @correo);";
-                band =  myCnn.ModificiaParametros(sentence, connection, ref mssg, parameters);
+                band =  db.ModificiaParametros(sentence, connection, ref mssg, parameters);
                
 
             }
@@ -111,9 +118,9 @@ namespace ClassLogicaNegocioTaller
             //Primera validación si el dato(ID) viene null
             if (_id != null)
             {
-                _connec = myCnn.AbrirConexion(ref mssg_);
+                _connec = db.AbrirConexion(ref mssg_);
                 QuerySQL = "Select * From Mecanico where id_Tecnico = " + _id;
-                readerData = myCnn.ConsultarReader(QuerySQL, _connec, ref mssg_);
+                readerData = db.ConsultarReader(QuerySQL, _connec, ref mssg_);
                
                 //Verificamos que tenga datos el DataReader
                 if (readerData != null)
@@ -164,9 +171,9 @@ namespace ClassLogicaNegocioTaller
             
             //Abrimos conexión con la BD, realizamos la consulta y asignamos al
             //DataReader la información recibida en base a la consulta SQL
-            _conn = myCnn.AbrirConexion(ref output);
+            _conn = db.AbrirConexion(ref output);
             QuerySQL_ = "Select * From Mecanico";
-            _data = myCnn.ConsultarReader(QuerySQL_, _conn, ref output);
+            _data = db.ConsultarReader(QuerySQL_, _conn, ref output);
 
             //Creamos un List para la tabla Mecanico y toda la data que nos despliegue
             List<Mecanico> AllMech = new List<Mecanico>();
@@ -214,9 +221,9 @@ namespace ClassLogicaNegocioTaller
             SqlConnection connectionSQL = null;
 
             //Abrimos la conexión
-            connectionSQL = myCnn.AbrirConexion(ref message);
+            connectionSQL = db.AbrirConexion(ref message);
             //Hacemos la consulta y asignamos lo que devuelva al DataSet
-            content = myCnn.ConsultaDS(QuerySQL, connectionSQL, ref message);
+            content = db.ConsultaDS(QuerySQL, connectionSQL, ref message);
             //Validamos
             if (content != null)
             {
@@ -298,8 +305,8 @@ namespace ClassLogicaNegocioTaller
 
 
                 sentence = "Update Mecanico Set Nombre=@Nombre_, App = @App_, Apm = @Apm_, Celular = @Celular_, correo = @correo_ Where id_Tecnico = @id_";
-                conn = myCnn.AbrirConexion(ref mssg);
-                flag = myCnn.ModificiaParametros(sentence, conn, ref mssg, parameters);
+                conn = db.AbrirConexion(ref mssg);
+                flag = db.ModificiaParametros(sentence, conn, ref mssg, parameters);
 
             }
             else
@@ -331,7 +338,7 @@ namespace ClassLogicaNegocioTaller
             if (id != null)
             {
                 Sentence = "Delete From Mecanico where id_Tecnico = @_id";
-                output = myCnn.ModificiaParametros(Sentence, myCnn.AbrirConexion(ref message_), ref message_, paramID);
+                output = db.ModificiaParametros(Sentence, db.AbrirConexion(ref message_), ref message_, paramID);
             }
             else
             {
