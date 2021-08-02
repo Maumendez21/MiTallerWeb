@@ -27,6 +27,8 @@
         </div>
         <div class="row ">
             <div class="col-md-6" >
+                Marca: 
+                <asp:DropDownList CssClass="form-select" ID="dropMarca" runat="server" AutoPostBack="True" OnSelectedIndexChanged="dropMarca_SelectedIndexChanged"></asp:DropDownList>
                 Modelo: 
                 <asp:TextBox CssClass="form-control" ID="txtModelo" runat="server"></asp:TextBox>
                 Año: 
@@ -35,7 +37,6 @@
                 <asp:TextBox CssClass="form-control" ID="txtColor" runat="server"></asp:TextBox>
                 Placas: 
                 <asp:TextBox CssClass="form-control" ID="txtPlacas" runat="server"></asp:TextBox>
-               
 
             </div>
             <div class="col-md-6" >

@@ -14,8 +14,43 @@ namespace ClassLogicaNegocioTaller
 {
     public class LogicaAuto
     {
-        private AccesoSQL db = new AccesoSQL(@"Server=DESKTOP-FFJP8C6;Database=MiTaller2021;Integrated Security=true;");
+        private AccesoSQL db = new AccesoSQL(@"Server=DESKTOP-10SGSAI\SQLEXPRESS;Database=MiTaller2021;Integrated Security=true;");
 
+
+        public List<Marca> getMarcas(ref string msgSalida)
+        {
+            SqlConnection cnTemp = null;
+            string query1 = "Select * from Marcas";
+
+            cnTemp = db.AbrirConexion(ref msgSalida);
+            SqlDataReader atrapaDatos = null;
+
+            atrapaDatos = db.ConsultarReader(query1, cnTemp, ref msgSalida);
+
+            List<Marca> listSalida = new List<Marca>();
+
+            if (atrapaDatos != null)
+            {
+                while (atrapaDatos.Read())
+                {
+                    listSalida.Add(new Marca
+                    {
+                        idMarca = (int)atrapaDatos[0],
+                        marca = (string)atrapaDatos[1]
+                    });
+                }
+
+            }
+            else
+            {
+                listSalida = null;
+            }
+
+            cnTemp.Close();
+            cnTemp.Dispose();
+
+            return listSalida;
+        }
         public Boolean InsertAuto(Auto nuevo, ref string result)
         {
             SqlParameter[] paramss = new SqlParameter[6];
@@ -147,12 +182,12 @@ namespace ClassLogicaNegocioTaller
             {
                 while (atrapaDatos.Read())
                 {
+                    salida.F_Marca = (int)atrapaDatos[1];
                     salida.Modelo = (string)atrapaDatos[2];
                     salida.año = (string)atrapaDatos[3];
                     salida.color = (string)atrapaDatos[4];
                     salida.placas = (string)atrapaDatos[5];
                     salida.dueño = (int)atrapaDatos[6];
-
                 }
             }
             else
@@ -207,10 +242,42 @@ namespace ClassLogicaNegocioTaller
             return listSalida;
         }
 
+        public int devuelveUltimoId(ref string msg)
+        {
+            int salida = 0;
+
+            SqlConnection cnTemp = null;
+            string query1 = "SELECT MAX(Id_Auto) AS id FROM Auto";
+
+            cnTemp = db.AbrirConexion(ref msg);
+            SqlDataReader atrapaDatos = null;
+
+            atrapaDatos = db.ConsultarReader(query1, cnTemp, ref msg);
+
+            if (atrapaDatos!=null)
+            {
+                while (atrapaDatos.Read())
+                {
+                    salida = (int)atrapaDatos[0];
+                }
+            }
+            else
+            {
+                salida = 0;
+            }
+
+            cnTemp.Close();
+            cnTemp.Dispose();
+
+            return salida; 
+        }
+
 
         public DataTable getAutoDataSet(ref string msgSalida)
         {
-            string query1 = "Select * from Auto";
+            string query1 = "select Id_Auto, Marca, Modelo, año, color, placas, nombre from Auto " +
+                "INNER JOIN Marcas ON Auto.F_Marca = Marcas.id_Marca " +
+                "INNER JOIN Cliente ON Auto.dueño = Cliente.id_cliente";
             DataTable salida = null;
             DataSet contenedor = null;
             contenedor = db.ConsultaDS(query1, db.AbrirConexion(ref msgSalida), ref msgSalida);

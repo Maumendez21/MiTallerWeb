@@ -22,9 +22,11 @@
         <div class="row mt-4">
                 <asp:Label ID="Label1" runat="server" Text="Inserta todos los campos para agregar un nuevo Automovil."></asp:Label>
             <div class="col-md-12" >
-
                 Marca: 
-                <asp:TextBox  CssClass="form-control" ID="txtMarca" runat="server"></asp:TextBox>
+                <%--<asp:TextBox  CssClass="form-control" ID="txtMarca" runat="server"></asp:TextBox>--%>
+                <asp:DropDownList CssClass="form-select" ID="dropMarcas" runat="server" AutoPostBack="True" OnSelectedIndexChanged="dropMarcas_SelectedIndexChanged">
+                    <asp:ListItem Selected="True" Value="0">Selecciona una marca</asp:ListItem>
+                </asp:DropDownList>
                 Modelo: 
                 <asp:TextBox CssClass="form-control" ID="txtModelo" runat="server"></asp:TextBox>
                 Año: 
@@ -34,11 +36,11 @@
                 Placa: 
                 <asp:TextBox  CssClass="form-control" ID="txtPlacas" runat="server"></asp:TextBox>
                 Dueño 
-                <asp:TextBox  CssClass="form-control" ID="txtDueño" runat="server"></asp:TextBox>
+                <%--<asp:TextBox  CssClass="form-control" ID="txtDueño" runat="server"></asp:TextBox>--%>
+                <asp:DropDownList CssClass="form-select" ID="dropClient" runat="server" OnSelectedIndexChanged="dropClient_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
                
                 <asp:Button CssClass="btn btn-primary mt-3 mb-3" ID="btnAddAuto" runat="server" Text="Agregar" OnClick="btnAddAuto_Click" />
                 <asp:Button CssClass="btn btn-danger mt-3 mb-3" ID="btnCancelAuto" runat="server" Text="Cancelar" OnClick="btnCancelAuto_Click" />
-
 
             </div>
         </div>

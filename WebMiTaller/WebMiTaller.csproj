@@ -84,6 +84,8 @@
     <Content Include="Mecanico\agregaTecnico.aspx" />
     <Content Include="Mecanico\Mecanico.aspx" />
     <Content Include="Mecanico\VerMecanico.aspx" />
+    <Content Include="Revisiones\RealizarRevision.aspx" />
+    <Content Include="Revisiones\DetalleRevision.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +160,20 @@
       <DependentUpon>VerMecanico.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Revisiones\RealizarRevision.aspx.cs">
+      <DependentUpon>RealizarRevision.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Revisiones\RealizarRevision.aspx.designer.cs">
+      <DependentUpon>RealizarRevision.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Revisiones\DetalleRevision.aspx.cs">
+      <DependentUpon>DetalleRevision.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Revisiones\DetalleRevision.aspx.designer.cs">
+      <DependentUpon>DetalleRevision.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -168,6 +184,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

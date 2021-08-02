@@ -25,12 +25,12 @@
              <div>
                  <h1>Autos</h1>
                  <asp:Button CssClass="btn btn-danger mb-3" ID="btnRegresarAuto" runat="server" Text="Regresar" OnClick="btnRegresarAuto_Click" />
-                 <asp:Button CssClass="btn btn-primary mb-3" ID="btnAddAuto" runat="server" Text="Agregar Auto" OnClick="btnAddAuto_Click" />
+                 <%--<asp:Button CssClass="btn btn-primary mb-3" ID="btnAddAuto" runat="server" Text="Agregar Auto" OnClick="btnAddAuto_Click" />--%>
 
                  <asp:GridView ID="GridAutos" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridAutos_SelectedIndexChanged">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                      <Columns>
-                         <asp:CommandField ShowSelectButton="True" AccessibleHeaderText="Ver Autos" SelectText="Ver Autos" />
+                         <asp:CommandField ShowSelectButton="True" AccessibleHeaderText="Ver Auto" SelectText="Ver Autos" />
                      </Columns>
                 <EditRowStyle BackColor="#999999" />
                 <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

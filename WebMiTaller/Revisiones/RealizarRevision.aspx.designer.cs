@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace WebMiTaller.Auto
+namespace WebMiTaller.Revisiones
 {
 
 
-    public partial class AgregarAuto
+    public partial class RealizarRevision
     {
 
         /// <summary>
@@ -24,22 +24,13 @@ namespace WebMiTaller.Auto
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control Label1.
+        /// Control dropMarca.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-
-        /// <summary>
-        /// Control dropMarcas.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dropMarcas;
+        protected global::System.Web.UI.WebControls.DropDownList dropMarca;
 
         /// <summary>
         /// Control txtModelo.
@@ -69,39 +60,66 @@ namespace WebMiTaller.Auto
         protected global::System.Web.UI.WebControls.TextBox txtColor;
 
         /// <summary>
-        /// Control txtPlacas.
+        /// Control txtPlaca.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPlacas;
+        protected global::System.Web.UI.WebControls.TextBox txtPlaca;
 
         /// <summary>
-        /// Control dropClient.
+        /// Control dropCliente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dropClient;
+        protected global::System.Web.UI.WebControls.DropDownList dropCliente;
 
         /// <summary>
-        /// Control btnAddAuto.
+        /// Control txtFalla.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddAuto;
+        protected global::System.Web.UI.WebControls.TextBox txtFalla;
 
         /// <summary>
-        /// Control btnCancelAuto.
+        /// Control txtDiagnostico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancelAuto;
+        protected global::System.Web.UI.WebControls.TextBox txtDiagnostico;
+
+        /// <summary>
+        /// Control dropMecanico.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dropMecanico;
+
+        /// <summary>
+        /// Control Button1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
+
+        /// <summary>
+        /// Control Button2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button2;
     }
 }
