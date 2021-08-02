@@ -120,12 +120,12 @@ namespace WebMiTaller.Revisiones
                 {
                     if (revision(recibeId, ref msg))
                     {
-                        Page.ClientScript.RegisterStartupScript(this.GetType(), "revision", "msgbox(`Correcto`, `" + msg + "`, `success`)", true);
-                        Response.Redirect("../Index.aspx");
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "revision", "msgboxS(`Correcto`, `" + msg + "`, `success`,  `../index.aspx`)", true);
+                       
                     }
                     else
                     {
-                        Page.ClientScript.RegisterStartupScript(this.GetType(), "errorRev", "msgbox(`Error`, `" + msg + "`, `error`)", true);
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "errorRev", "msgboxS(`Error`, `" + msg + "`, `error`, `../index.aspx` )", true);
                     }
                 }
             }

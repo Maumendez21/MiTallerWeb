@@ -54,13 +54,13 @@ namespace WebMiTaller.Mecanico
             //de Mecanicos
             if (flg)
             {
-                this.ClientScript.RegisterStartupScript(this.GetType(), "RESPONSETRUE", "msgbox(`Correcto1`, `" + _mssg + "`, `success`)", true);
-                Response.Redirect("Mecanico.aspx");
+                this.ClientScript.RegisterStartupScript(this.GetType(), "RESPONSETRUE", "msgboxS(`Correcto`, `" + _mssg + "`, `success`, ` Mecanico.aspx`)", true);
+               
             }
             else
             {
                 //En caso contrario mandamos un mensaje de error 
-                this.ClientScript.RegisterStartupScript(this.GetType(), "RESPONSEERROR", "msgbox(`Error1`, `" + _mssg + "`, `error`)", true);
+                this.ClientScript.RegisterStartupScript(this.GetType(), "RESPONSEERROR", "msgboxS(`Error`, `" + _mssg + "`, `error`,  ` Mecanico.aspx`)", true);
             }
         }
 

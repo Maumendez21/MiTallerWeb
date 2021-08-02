@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="../css/sweetalert2.min.css" />
 <script src="../js/sweetalert2.all.min.js" ></script>
 <script src="../js/index.js"></script>
+    <script src="../js/indexj.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </head>

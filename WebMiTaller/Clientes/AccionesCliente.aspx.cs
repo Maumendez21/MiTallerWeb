@@ -70,12 +70,12 @@ namespace WebMiTaller.Clientes
             if (recibe)
             {
                 
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "SUCCESCLIENT", "msgbox(`Correcto`, `" + resp + "`, ` success`, ` Clientes.aspx` )", true);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "SUCCESCLIENT", "msgboxS(`Correcto`, `" + resp + "`, ` success`, ` Clientes.aspx` )", true);
                
             }
             else
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "ERRORCLIENT", "msgbox(`Error`, `" + resp + "`, `error`, ` Clientes/AccionesClientes.aspx`)", true);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "ERRORCLIENT", "msgboxS(`Error`, `" + resp + "`, `error`, ` Clientes.aspx`)", true);
             }
 
             
@@ -90,12 +90,12 @@ namespace WebMiTaller.Clientes
             if (recibe)
             {
                 
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "ERRORCLIENT", "msgbox(`Error`, `" + resp + "`, `error`)", true);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "ERRORCLIENT", "msgboxS(`Error`, `" + resp + "`, `error`, ` Clientes.aspx`)", true);
                 
             }
             else
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "ERRORdelete", "msgbox(`Error`, `" + resp + "`, `error`)", true);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "ERRORdelete", "msgboxS(`Error`, `" + resp + "`, `error`, ` Clientes.aspx`)", true);
             }
 
 

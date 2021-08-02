@@ -80,15 +80,16 @@ namespace WebMiTaller.Reparaciones
                 flag = _lgRev.UpdateAuth(out_, ref message, id);
                 if (flag)
                 {
-                    
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "RESPONSETRUE", "msgbox(`Correcto1`, `" + message + "`, `success`)", true);
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "reparacionT", "msgboxS(`Correcto`, `" + message + "`, `success`,  `../index.aspx`)", true);
                     Response.Redirect("../index.aspx");
+
                 }
             }
             else
             {
                 //En caso contrario mandamos un mensaje de error 
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "RESPONSEERROR", "msgbox(`Error1`, `" + message + "`, `error`)", true);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "reparacionF", "msgboxS(`Error`, `" + message + "`, `error`, `../index.aspx` )", true);
+                
             }
 
 

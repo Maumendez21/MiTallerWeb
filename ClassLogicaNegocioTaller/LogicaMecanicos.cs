@@ -348,6 +348,27 @@ namespace ClassLogicaNegocioTaller
             return output;
         }
 
+        //DATASET PARA FILTRAR POR DÍA LA REVISIONES DEL MECANICO
+          public DataTable getAllRevMechanic(ref string mssg, string id_, string date){
+            //Variables locales
+            DataTable output = null;
+        DataSet content = null;
+
+            //Consulta para obtener un detalle más amplio de la revision del auto seleccionado en el Index
+            string QuerySQL = "select nombre as Nombre, app as Apellido, celular as Celular, correo as Email, entrada as Fecha_Revisión, falla as Falla, diagnostico as Diagnostico from Mecanico " +
+                " INNER JOIN Revision as rv on rv.Mecanico = Mecanico.id_Tecnico " +
+                " where id_Tecnico = " + id_ + " and Entrada = '" +date + "';";
+        //Llenamos el DataSet con los datos solicitados
+        content = db.ConsultaDS(QuerySQL, db.AbrirConexion(ref mssg),ref mssg);
+            //Validamos para evitar posibles errores
+            if (content != null)
+            {
+                output = content.Tables[0];
+            }
+
+            return output;
+        }
+
 
 
     

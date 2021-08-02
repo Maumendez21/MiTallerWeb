@@ -30,4 +30,3 @@ C:\MiTallerWeb\ClassLogicaNegocioTaller\obj\Debug\ClassLogicaNegocioTaller.cspro
 C:\MiTallerWeb\ClassLogicaNegocioTaller\obj\Debug\ClassLogicaNegocioTaller.csproj.CopyComplete
 C:\MiTallerWeb\ClassLogicaNegocioTaller\obj\Debug\ClassLogicaNegocioTaller.dll
 C:\MiTallerWeb\ClassLogicaNegocioTaller\obj\Debug\ClassLogicaNegocioTaller.pdb
-C:\Users\davedrew\Desktop\MiTallerWeb\ClassLogicaNegocioTaller\obj\Debug\ClassLogicaNegocioTaller.csprojAssemblyReference.cache
