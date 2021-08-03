@@ -92,11 +92,11 @@ namespace WebMiTaller.Auto
             recibe = objLogAuto.UpdateAuto(temp, id, ref resp);
             if (recibe)
             {
-                Response.Redirect("Autos.aspx");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "successUpdate", "msgboxS(`Actualizadp`, `" + resp + "`, `success`, ` Autos.aspx`)", true);
             }
             else
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "ERRORCLIENT", "msgbox(`Error`, `" + resp + "`, `error`)", true);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "ERRORCLIENT", "msgboxS(`Error`, `" + resp + "`, `error`,  ` AccionesAuto.aspx`)", true);
             }
         }
 
@@ -108,11 +108,12 @@ namespace WebMiTaller.Auto
 
             if (recibe)
             {
-                Response.Redirect("Autos.aspx");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "success", "msgboxS(`Correct`, `" + resp + "`, `success`, ` Autos.aspx`)", true);
+
             }
             else
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "ERRORdelete", "msgbox(`Error`, `No se puede eliminar. Tal vez el auto esta en una revisión :/`, `error`)", true);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "errrrr", "msgboxS(`Error`, `No se puede eliminar. Tal vez el auto esta en una revisión :/`, `error`, ` AccionesAuto.aspx`)", true);
             }
         }
 

@@ -86,7 +86,6 @@
     <Content Include="Mecanico\VerMecanico.aspx" />
     <Content Include="Reparaciones\DetalleReparacion.aspx" />
     <Content Include="Revisiones\RealizarRevision.aspx" />
-    <Content Include="Revisiones\DetalleRevision.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -174,13 +173,6 @@
     </Compile>
     <Compile Include="Revisiones\RealizarRevision.aspx.designer.cs">
       <DependentUpon>RealizarRevision.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Revisiones\DetalleRevision.aspx.cs">
-      <DependentUpon>DetalleRevision.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Revisiones\DetalleRevision.aspx.designer.cs">
-      <DependentUpon>DetalleRevision.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

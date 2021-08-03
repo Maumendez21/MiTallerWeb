@@ -92,7 +92,8 @@
 
             </div>
 
-            <div class="col-md-4 mt-1" >
+            <div class="col-md-4" >
+                  <p>--</p>
                 <div class="card text-center">
                     <div class="card-header">
                     <h4>Revisión</h4>

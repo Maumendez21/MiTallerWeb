@@ -59,7 +59,7 @@
                             <h4>Iniciar una revisión</h4>
                             </div>
                             <div class="card-body">
-                                <asp:Button CssClass="btn btn-primary" ID="btnClientes" runat="server" Text="Iniciar Reparación" OnClick="btnClientes_Click" />
+                                <asp:Button CssClass="btn btn-primary" ID="btnClientes" runat="server" Text="Iniciar Revisión" OnClick="btnClientes_Click" />
                           </div>
                         </div>
                         

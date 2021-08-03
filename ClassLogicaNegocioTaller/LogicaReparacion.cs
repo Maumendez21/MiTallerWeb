@@ -16,7 +16,7 @@ namespace ClassLogicaNegocioTaller
     public class LogicaReparacion
     {
         //Cadena de Conexión Mauro
-        //private AccesoSQL db = new AccesoSQL(@"Server=DESKTOP-10SGSAI\SQLEXPRESS;Database=MiTaller2021;Integrated Security=true;");
+        private AccesoSQL db = new AccesoSQL(@"Server=DESKTOP-10SGSAI\SQLEXPRESS;Database=MiTaller2021;Integrated Security=true;");
         //private AccesoSQL db = new AccesoSQL(@"Server=LAPTOP-IK2MC2K0\SQLEXPRESS;Database=MiTaller2021;Integrated Security=true;");
 
 
@@ -24,7 +24,7 @@ namespace ClassLogicaNegocioTaller
         //private AccesoSQL db = new AccesoSQL(@"Server=LAPTOP-822RV6A8;Database=MiTaller2021;Integrated Security=true;");
 
         //Cadena de Conexión Juan
-        private AccesoSQL db = new AccesoSQL(@"Server=DESKTOP-FFJP8C6;Database=MiTaller2021;Integrated Security=true;");
+        //private AccesoSQL db = new AccesoSQL(@"Server=DESKTOP-FFJP8C6;Database=MiTaller2021;Integrated Security=true;");
 
 
 

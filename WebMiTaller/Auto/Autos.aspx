@@ -41,27 +41,39 @@
             <form id="form1" class="container" runat="server">
              <div class="row mt-4">
                  <div class="col-md-12">
-                       <h1>Autos</h1>
-                 <asp:Button CssClass="btn btn-danger mb-3" ID="btnRegresarAuto" runat="server" Text="Regresar" OnClick="btnRegresarAuto_Click" />
-                 <%--<asp:Button CssClass="btn btn-primary mb-3" ID="btnAddAuto" runat="server" Text="Agregar Auto" OnClick="btnAddAuto_Click" />--%>
 
-                 <asp:GridView ID="GridAutos" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridAutos_SelectedIndexChanged" Width="1100px">
-                <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
-                     <Columns>
-                         <asp:CommandField ShowSelectButton="True" AccessibleHeaderText="Ver Auto" SelectText="Ver Auto" />
-                     </Columns>
-                <EditRowStyle BackColor="#999999" />
-                <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-                <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
-                <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
-                <SortedAscendingCellStyle BackColor="#E9E7E2" />
-                <SortedAscendingHeaderStyle BackColor="#506C8C" />
-                <SortedDescendingCellStyle BackColor="#FFFDF8" />
-                 <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                     <div class="card text-center">
+                            <div class="card-header">
+                             <h4>Autos</h4>
+                            </div>
+                            <div class="card-body">
+                                <asp:Button CssClass="btn btn-danger mb-3" ID="btnRegresarAuto" runat="server" Text="Regresar" OnClick="btnRegresarAuto_Click" />
+                                 <%--<asp:Button CssClass="btn btn-primary mb-3" ID="btnAddAuto" runat="server" Text="Agregar Auto" OnClick="btnAddAuto_Click" />--%>
 
-                </asp:GridView>
+                                 <asp:GridView ID="GridAutos" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridAutos_SelectedIndexChanged" Width="1100px">
+                                <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                                     <Columns>
+                                         <asp:CommandField ShowSelectButton="True" AccessibleHeaderText="Ver Auto" SelectText="Ver Auto" />
+                                     </Columns>
+                                <EditRowStyle BackColor="#999999" />
+                                <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                                <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                                <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                                <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                                <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                                <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                                 <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+
+                                </asp:GridView>
+               
+                             </div>
+                          <div class="card-footer text-muted">
+                            Dar en ver Auto para ver su detalle.
+                          </div>
+                        </div>
+                
                  </div>
                
 
