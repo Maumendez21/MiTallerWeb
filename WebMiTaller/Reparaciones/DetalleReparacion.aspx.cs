@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 
 using ClassLogicaNegocioTaller;
 using ClassCapaEntidades;
+using System.Drawing;
 
 namespace WebMiTaller.Reparaciones
 {
@@ -73,23 +74,36 @@ namespace WebMiTaller.Reparaciones
             };
             //Mandamos la respuesta de la logica a nuestra variable local out_ y dependiendo de la
             //respueta validamos
-            out_ = _lgRep.InsertFixCar(aux, ref message);
-            //Validamos
-            if (out_)
+            if (aux.Garantia == "Selecciona meses" || aux.Garantia == null)
             {
-                flag = _lgRev.UpdateAuth(out_, ref message, id);
-                if (flag)
-                {
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "reparacionT", "msgboxS(`Correcto`, `" + message + "`, `success`,  `../index.aspx`)", true);
-                    Response.Redirect("../index.aspx");
-
-                }
+                //En caso contrario mandamos un mensaje de error 
+                lbAux.Text = "Error debes seleccionar un mes valido";
+                lbAux.ForeColor = Color.Red;
+                
             }
             else
             {
-                //En caso contrario mandamos un mensaje de error 
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "reparacionF", "msgboxS(`Error`, `" + message + "`, `error`, `../index.aspx` )", true);      
+                out_ = _lgRep.InsertFixCar(aux, ref message);
+                //Validamos
+                if (out_)
+                {
+                    flag = _lgRev.UpdateAuth(out_, ref message, id);
+                    if (flag)
+                    {
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "success", "msgboxRe(`Correcto`, `" + message + "`, `success`,  `../index.aspx`)", true);
+                        Response.Redirect("../index.aspx");
+
+                    }
+                }
+                else
+                {
+                    lbAux.Text = "Error inesperado intentalo de nuevo más tarde";
+                    lbAux.ForeColor = Color.Red;
+
+                }
             }
+           
+            
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
@@ -100,7 +114,10 @@ namespace WebMiTaller.Reparaciones
 
         protected void txtGarantia_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ViewState["garanty"] = txtGarantia.SelectedValue.ToString();
+            
+                ViewState["garanty"] = txtGarantia.SelectedValue.ToString();
+           
+            
         }
     }
 }

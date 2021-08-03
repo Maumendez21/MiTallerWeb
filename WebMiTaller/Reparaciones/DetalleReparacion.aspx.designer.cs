@@ -24,6 +24,15 @@ namespace WebMiTaller.Reparaciones
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// Control lba.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lba;
+
+        /// <summary>
         /// Control gridDetailRev.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace WebMiTaller.Reparaciones
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gridDetailRev;
+
+        /// <summary>
+        /// Control lbAux.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbAux;
 
         /// <summary>
         /// Control txtDetail.

@@ -34,13 +34,18 @@
           <a class="nav-link" href="../Clientes/Clientes.aspx">Clientes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Autos</a>
+          <a class="nav-link" href="../Auto/Autos.aspx">Autos</a>
         </li>
           <li class="nav-item">
           <a class="nav-link" href="Mecanico.aspx">Mecanicos</a>
         </li>
       </ul>
     </div>
+       <span class="navbar-text" style="font-weight:bold; font-style:italic; color=: white !important;">
+  
+           <p class="card-text text-white">Tu taller de confianza!</p>
+
+      </span>
   </div>
     </nav>
 

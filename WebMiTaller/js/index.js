@@ -1,4 +1,4 @@
-﻿function msgbox(ti, msg, tipo, url) {
+function msgboxRe(ti, msg, tipo, url) {
     Swal.fire({
         title: ti,
         text: msg,
