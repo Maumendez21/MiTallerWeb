@@ -44,15 +44,60 @@
   </div>
     </nav>
 
-    <div class="row mt-4 container" >
-        <div class="col-md-12">
+   
+        
             <form id="form1" class="container" runat="server">
-                <div>
-                    <asp:Button CssClass="btn btn-primary" ID="btnClientes" runat="server" Text="Iniciar Reparación" OnClick="btnClientes_Click" />
-                 </div>
+
+                <div class="row mt-4" >
+                    <div class="col-md-12">
+
+                        <div class="card text-center">
+                            <div class="card-header">
+                            <h4>Iniciar una revisión</h4>
+                            </div>
+                            <div class="card-body">
+                                <asp:Button CssClass="btn btn-primary" ID="btnClientes" runat="server" Text="Iniciar Reparación" OnClick="btnClientes_Click" />
+                          </div>
+                        </div>
+                        
+                     </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                         <div class="card text-center">
+                            <div class="card-header">
+                             <h4>Revisiones</h4>
+                            </div>
+                            <div class="card-body">
+                                <asp:GridView ID="gridRevisiones" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="1087px" OnSelectedIndexChanged="gridRevisiones_SelectedIndexChanged">
+                                    <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                                    <Columns>
+                                        <asp:CommandField SelectText="Ver Revisión" ShowSelectButton="True" />
+                                    </Columns>
+                                    <EditRowStyle BackColor="#999999" />
+                                    <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                    <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                                    <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                                    <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                                    <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                                    <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                                    <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                                    <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                                </asp:GridView>
+               
+                             </div>
+                          <div class="card-footer text-muted">
+                            Dar en ver revisión para autorizar la reparación.
+                          </div>
+                        </div>
+                    </div>
+                </div>
+
              </form>
-        </div>
-    </div>
+        
+   
     
     <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

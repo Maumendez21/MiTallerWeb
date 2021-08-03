@@ -33,15 +33,6 @@ namespace WebMiTaller.Auto
         protected global::System.Web.UI.WebControls.Button btnRegresarAuto;
 
         /// <summary>
-        /// Control btnAddAuto.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddAuto;
-
-        /// <summary>
         /// Control GridAutos.
         /// </summary>
         /// <remarks>

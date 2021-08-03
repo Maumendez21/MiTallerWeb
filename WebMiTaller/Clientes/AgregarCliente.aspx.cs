@@ -46,12 +46,12 @@ namespace WebMiTaller.Clientes
             recibe = objLogClient.InsertClient(temp, ref resp);
             if (recibe)
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "recibe1", "msgbox(`Correcto1`, `" + resp + "`, `success`)", true);
-                Response.Redirect("Clientes.aspx");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "recibe1", "msgboxS(`Correcto1`, `" + resp + "`, `success`, ` Clientes.aspx`)", true);
+                
             }
             else
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "recibe2", "msgbox(`Error1`, `" + resp + "`, `error`)", true);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "recibe2", "msgboxS(`Error1`, `" + resp + "`, `error`, ` Clientes.aspx`)", true);
             }
         }
 

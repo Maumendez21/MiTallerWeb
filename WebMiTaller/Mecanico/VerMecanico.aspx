@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <link rel="stylesheet" href="../css/sweetalert2.min.css" />
 <script src="../js/sweetalert2.all.min.js" ></script>
-<script src="../js/index.js"></script>
+<script src="../js/indexj.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
      <title>Ver mecanico solicitado</title>
 </head>
@@ -92,7 +92,61 @@
     Estas acciones no podran anularse una vez realizadas
   </div>
 </div>
+
 </div>
+
+            <div class="col-md-12 mt-4">
+               
+                 <div class="card text-center mt-3">
+    <div class="card-header">
+    <h4>Revisiones del Mecanico</h4>
+        <p>Consultar Revisión por día del mecanico seleccionado</p>
+    </div>
+    <div class="card-body">
+         <p>Da click en el boton Calendario para escoger una fecha a consultar de dicho mecanico</p>
+         <asp:Button CssClass="btn btn-primary m-2" ID="btnOpen" runat="server" Text="Calendario" OnClick="btnOpen_Click" />
+    
+                <asp:Calendar ID="clFecha" runat="server" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="220px" OnSelectionChanged="clFecha_SelectionChanged">
+                    <DayHeaderStyle BackColor="#99CCCC" ForeColor="#336666" Height="1px" />
+                    <NextPrevStyle Font-Size="8pt" ForeColor="#CCCCFF" />
+                    <OtherMonthDayStyle ForeColor="#999999" />
+                    <SelectedDayStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+                    <SelectorStyle BackColor="#99CCCC" ForeColor="#336666" />
+                    <TitleStyle BackColor="#003399" BorderColor="#3366CC" BorderWidth="1px" Font-Bold="True" Font-Size="10pt" ForeColor="#CCCCFF" Height="25px" />
+                    <TodayDayStyle BackColor="#99CCCC" ForeColor="White" />
+                    <WeekendDayStyle BackColor="#CCCCFF" />
+                </asp:Calendar> <br />
+
+                <label for="txtFecha" style="font-weight: bold">Fecha Seleccionada:</label> 
+                <asp:TextBox CssClass="form-control" style="color: red" ID="txtFecha" runat="server" ReadOnly="True"></asp:TextBox> <br />
+                 <asp:GridView ID="GridVM" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" >
+                <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                <EditRowStyle BackColor="#999999" />
+                <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                 <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+
+                </asp:GridView>
+
+               
+               <asp:Label CssClass="form-control" style="color: red" ID="txtError" runat="server"></asp:Label>
+
+    <asp:Button CssClass="btn btn-primary m-2" ID="btnConsulta" runat="server" Text="Consultar Fecha" OnClick="btnConsulta_Click" />
+    
+           
+  </div>
+  <div class="card-footer text-muted">
+    Esta acción es sólo informativa, no se puede modificar
+  </div>
+</div>
+            </div>
+
         </div>
     </form>
 

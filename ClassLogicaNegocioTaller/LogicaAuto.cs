@@ -14,8 +14,51 @@ namespace ClassLogicaNegocioTaller
 {
     public class LogicaAuto
     {
-        private AccesoSQL db = new AccesoSQL(@"Server=DESKTOP-FFJP8C6;Database=MiTaller2021;Integrated Security=true;");
+        //Cadena de Conexión Mauro
+        //private AccesoSQL db = new AccesoSQL(@"Server=DESKTOP-10SGSAI\SQLEXPRESS;Database=MiTaller2021;Integrated Security=true;");
+        //private AccesoSQL db = new AccesoSQL(@"Server=LAPTOP-IK2MC2K0\SQLEXPRESS;Database=MiTaller2021;Integrated Security=true;");
 
+        //Cadena de Conexión David
+        private AccesoSQL db = new AccesoSQL(@"Server=LAPTOP-822RV6A8;Database=MiTaller2021;Integrated Security=true;");
+
+        //Cadena de Conexión Juan
+        //private AccesoSQL db = new AccesoSQL(@"Server=DESKTOP-FFJP8C6;Database=MiTaller2021;Integrated Security=true;");
+
+
+        public List<Marca> getMarcas(ref string msgSalida)
+        {
+            SqlConnection cnTemp = null;
+            string query1 = "Select * from Marcas";
+
+            cnTemp = db.AbrirConexion(ref msgSalida);
+            SqlDataReader atrapaDatos = null;
+
+            atrapaDatos = db.ConsultarReader(query1, cnTemp, ref msgSalida);
+
+            List<Marca> listSalida = new List<Marca>();
+
+            if (atrapaDatos != null)
+            {
+                while (atrapaDatos.Read())
+                {
+                    listSalida.Add(new Marca
+                    {
+                        idMarca = (int)atrapaDatos[0],
+                        marca = (string)atrapaDatos[1]
+                    });
+                }
+
+            }
+            else
+            {
+                listSalida = null;
+            }
+
+            cnTemp.Close();
+            cnTemp.Dispose();
+
+            return listSalida;
+        }
         public Boolean InsertAuto(Auto nuevo, ref string result)
         {
             SqlParameter[] paramss = new SqlParameter[6];
@@ -147,12 +190,12 @@ namespace ClassLogicaNegocioTaller
             {
                 while (atrapaDatos.Read())
                 {
+                    salida.F_Marca = (int)atrapaDatos[1];
                     salida.Modelo = (string)atrapaDatos[2];
                     salida.año = (string)atrapaDatos[3];
                     salida.color = (string)atrapaDatos[4];
                     salida.placas = (string)atrapaDatos[5];
                     salida.dueño = (int)atrapaDatos[6];
-
                 }
             }
             else
@@ -207,10 +250,42 @@ namespace ClassLogicaNegocioTaller
             return listSalida;
         }
 
+        public int devuelveUltimoId(ref string msg)
+        {
+            int salida = 0;
+
+            SqlConnection cnTemp = null;
+            string query1 = "SELECT MAX(Id_Auto) AS id FROM Auto";
+
+            cnTemp = db.AbrirConexion(ref msg);
+            SqlDataReader atrapaDatos = null;
+
+            atrapaDatos = db.ConsultarReader(query1, cnTemp, ref msg);
+
+            if (atrapaDatos!=null)
+            {
+                while (atrapaDatos.Read())
+                {
+                    salida = (int)atrapaDatos[0];
+                }
+            }
+            else
+            {
+                salida = 0;
+            }
+
+            cnTemp.Close();
+            cnTemp.Dispose();
+
+            return salida; 
+        }
+
 
         public DataTable getAutoDataSet(ref string msgSalida)
         {
-            string query1 = "Select * from Auto";
+            string query1 = "select Id_Auto, Marca, Modelo, año, color, placas,  Cliente.Nombre as Dueño from Auto " +
+                "INNER JOIN Marcas ON Auto.F_Marca = Marcas.id_Marca " +
+                "INNER JOIN Cliente ON Auto.dueño = Cliente.id_cliente";
             DataTable salida = null;
             DataSet contenedor = null;
             contenedor = db.ConsultaDS(query1, db.AbrirConexion(ref msgSalida), ref msgSalida);
@@ -220,5 +295,93 @@ namespace ClassLogicaNegocioTaller
             }
             return salida;
         }
+
+        public DataTable getRevisionesAutoSet(string id, ref string msgSalida)
+        {
+            string query1 = "select id_Revision, Entrada, Falla, diagnostico, Modelo, placas, Mecanico.Nombre as Mecanico from Revision " +
+                "INNER JOIN Auto ON Revision.Auto = Auto.Id_Auto " +
+                "INNER JOIN Mecanico ON Revision.Mecanico = Mecanico.id_Tecnico WHERE Auto = "+id+" AND Revision.Autorizacion=0";
+            DataTable salida = null;
+            DataSet contenedor = null;
+            contenedor = db.ConsultaDS(query1, db.AbrirConexion(ref msgSalida), ref msgSalida);
+            if (contenedor != null)
+            {
+                salida = contenedor.Tables[0];
+            }
+            return salida;
+        }
+
+        //GET REPARACIONES AUTO //
+        public DataTable getReparacionesAutoSet(string id, ref string msgSalida)
+        {
+            //INNER JOIN PARA VER MAS DETALLES DEL AUTO REPARADO Y SI TIENE REPARACIÓN HECHA, NOS MUESTRA LA INFORMACIÓN
+            string query1 = " SELECT id_Reparacion, Detalles, Garantia, Salida, Modelo, placas, Mecanico.Nombre as Mecanico, Cliente.Nombre as Dueño from Reparacion " +
+                            " INNER JOIN Revision as rev on rev.id_Revision = Reparacion.Fk_Revision " +
+                            " INNER JOIN Auto as aut on aut.Id_Auto = rev.Auto " +
+                            " INNER JOIN Mecanico on Mecanico.id_Tecnico = rev.Mecanico " +
+                            " INNER JOIN Cliente on Cliente.id_cliente = aut.dueño " +
+                            " where aut.Id_Auto = " + id + " and rev.Autorizacion = 1;";
+
+            DataTable salida = null;
+            DataSet contenedor = null;
+            contenedor = db.ConsultaDS(query1, db.AbrirConexion(ref msgSalida), ref msgSalida);
+            if (contenedor != null)
+            {
+                salida = contenedor.Tables[0];
+            }
+            return salida;
+        }
+
+
+        //GET GARANTY
+        //OBTENEMOS LOS MESES DE GARANTÍA QUE TIENE UNA REPARACIÓN
+        public Reparacion getReparacionT(int idRep, ref string message)
+        {
+            Reparacion response = null;
+            
+
+            SqlConnection cnTemp = null;
+            string query1 = "SELECT * FROM Reparacion Where id_Reparacion = " + idRep;
+
+            cnTemp = db.AbrirConexion(ref message);
+            SqlDataReader atrapaDatos = null;
+
+            atrapaDatos = db.ConsultarReader(query1, cnTemp, ref message);
+
+            if (atrapaDatos != null)
+            {
+               
+                while (atrapaDatos.Read())
+                {
+                    response = new Reparacion
+                    {
+
+                        Id_Reparacion = (int)atrapaDatos[0],
+                        Detalles = (string)atrapaDatos[1],
+                        Garantia = (string)atrapaDatos[2],
+                        salida = (DateTime)atrapaDatos[3],
+                        FK_Revision = (int)atrapaDatos[4]
+
+
+                    };
+                }
+                
+            }
+            else
+            {
+                response = null;
+            }
+
+            cnTemp.Close();
+            cnTemp.Dispose();
+
+            return response;
+
+
+
+        }
+
+        
+
     }
 }

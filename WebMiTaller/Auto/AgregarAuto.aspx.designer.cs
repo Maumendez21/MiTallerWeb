@@ -33,13 +33,13 @@ namespace WebMiTaller.Auto
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// Control txtMarca.
+        /// Control dropMarcas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMarca;
+        protected global::System.Web.UI.WebControls.DropDownList dropMarcas;
 
         /// <summary>
         /// Control txtModelo.
@@ -78,13 +78,13 @@ namespace WebMiTaller.Auto
         protected global::System.Web.UI.WebControls.TextBox txtPlacas;
 
         /// <summary>
-        /// Control txtDueño.
+        /// Control dropClient.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDueño;
+        protected global::System.Web.UI.WebControls.DropDownList dropClient;
 
         /// <summary>
         /// Control btnAddAuto.

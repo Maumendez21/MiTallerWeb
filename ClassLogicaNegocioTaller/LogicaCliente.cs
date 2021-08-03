@@ -13,7 +13,15 @@ namespace ClassLogicaNegocioTaller
 {
     public class LogicaCliente
     {
-        private AccesoSQL db = new AccesoSQL(@"Server=DESKTOP-FFJP8C6;Database=MiTaller2021;Integrated Security=true;");
+        //Cadena de Conexión Mauro
+        //private AccesoSQL db = new AccesoSQL(@"Server=DESKTOP-10SGSAI\SQLEXPRESS;Database=MiTaller2021;Integrated Security=true;");
+        //private AccesoSQL db = new AccesoSQL(@"Server=LAPTOP-IK2MC2K0\SQLEXPRESS;Database=MiTaller2021;Integrated Security=true;");
+
+        //Cadena de Conexión David
+        private AccesoSQL db = new AccesoSQL(@"Server=LAPTOP-822RV6A8;Database=MiTaller2021;Integrated Security=true;");
+
+        //Cadena de Conexión Juan
+        //private AccesoSQL db = new AccesoSQL(@"Server=DESKTOP-FFJP8C6;Database=MiTaller2021;Integrated Security=true;");
 
         public Boolean InsertClient(Cliente nuevo, ref string result)
         {
@@ -248,6 +256,21 @@ namespace ClassLogicaNegocioTaller
                 salida = contenedor.Tables[0];
             }
             return salida;
+        }
+
+        public DataTable getAutosClient(string id, ref string msgSalida)
+        {
+            string query1 = "select Id_Auto, Marca, Modelo, año, color, placas from Auto " +
+                            "INNER JOIN Marcas ON Auto.F_Marca = Marcas.id_Marca where dueño = " + id;
+            DataTable salida = null;
+            DataSet contenedor = null;
+            contenedor = db.ConsultaDS(query1, db.AbrirConexion(ref msgSalida), ref msgSalida);
+            if (contenedor != null)
+            {
+                salida = contenedor.Tables[0];
+            }
+            return salida;
+
         }
     }
 }

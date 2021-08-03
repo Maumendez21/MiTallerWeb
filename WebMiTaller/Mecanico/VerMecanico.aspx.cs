@@ -29,6 +29,7 @@ namespace WebMiTaller.Mecanico
                 lgM = new LogicaMecanicos();
                 Session["lgMC"] = lgM;
                 id_Tecnico = (string)Session["idTecnico"];
+                clFecha.Visible = false;
                 getClientID();
             }
             else
@@ -81,14 +82,14 @@ namespace WebMiTaller.Mecanico
             //Reflejado el nuevo registro en nuestro control GridView
             if (flag)
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "RESPONSETRUE", "msgbox(`Correcto1`, `" + mssg + "`, `success`)", true);
-                Response.Redirect("Mecanico.aspx");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "RESPONSETRUE", "msgboxS(`Correcto`, `" + mssg + "`, `success`, `Mecanico.aspx`)", true);
+                
             }
             else
             {
                 //En casso contrario mandaremos un mensaje de alerta de SweetAlert con el error cometido por el usuario
 
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "ERRORUPDATE", "msgbox(`Error`, `" + mssg + "`, `error`)", true);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "ERRORUPDATE", "msgboxS(`Error`, `" + mssg + "`, `error`, `Mecanico.aspx`)", true);
             }
 
 
@@ -105,16 +106,47 @@ namespace WebMiTaller.Mecanico
             flag_ = lgM.deleteMechanic(id_Tecnico, ref message_);
             //Validamos si la respuesta es verdadera, procedemos a enviar a la pagina de inicio de Mecanicos
             //Y se vere reflejado el cambio en nuestro control GridView
-            if (flag_)
+            if (flag_) 
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "RESPONSETRUE", "msgbox(`Correcto1`, `" + message_ + "`, `success`)", true);
-                Response.Redirect("Mecanico.aspx");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "RESPONSETRUE", "msgboxS(`Correcto`, `" + message_ + "`, `success`, `Mecanico.aspx`)", true);
+                
             }
             else
             {
                 //En caso contrario, mandaremos un mensaje de alerta de SweetAlert con el error cometido por el usuario
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "ERRORDELETE", "msgbox(`Error`, `" + message_ + "`, `error`)", true);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "ERRORDELETE", "msgboxS(`Error`, `" + message_ + "`, `error`, `Mecanico.aspx`)", true);
             }
+
+        }
+
+        protected void btnOpen_Click(object sender, EventArgs e)
+        {
+            clFecha.Visible = !clFecha.Visible;
+        }
+
+        protected void clFecha_SelectionChanged(object sender, EventArgs e)
+        {
+            txtFecha.Text = clFecha.SelectedDate.ToShortDateString();
+        }
+
+        protected void btnConsulta_Click(object sender, EventArgs e)
+        {
+            string mssg = "";
+            int rowCount = 0;
+            string idt = (string)Session["idTecnico"];
+            GridVM.DataSource = lgM.getAllRevMechanic(ref mssg, idt, txtFecha.Text );
+            GridVM.DataBind();
+            rowCount = GridVM.Rows.Count;
+            if (rowCount == 0)
+            {
+                txtError.Text = "No hay datos encontrados con la fecha especificada";
+            }
+            else
+            {
+                txtError.Text ="";
+            }
+            clFecha.Visible = !clFecha.Visible;
+            txtFecha.Text = "";
 
         }
     }

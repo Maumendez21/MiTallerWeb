@@ -22,6 +22,7 @@ namespace WebMiTaller.Clientes
                 Session["objLogClient"] = objLogClient;
                 id = Session["id"].ToString();
                 cargarCliente();
+                cargarAutos();
             }
             else
             {
@@ -30,6 +31,13 @@ namespace WebMiTaller.Clientes
             }
 
             
+        }
+
+        private void cargarAutos()
+        {
+            string msg = "";
+            gridAutos.DataSource = objLogClient.getAutosClient(id, ref msg);
+            gridAutos.DataBind();
         }
 
         public void cargarCliente()
@@ -69,12 +77,16 @@ namespace WebMiTaller.Clientes
             recibe = objLogClient.UpdateClient(temp, id, ref resp);
             if (recibe)
             {
-                Response.Redirect("Clientes.aspx");
+                
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "SUCCESCLIENT", "msgboxS(`Correcto`, `" + resp + "`, ` success`, ` Clientes.aspx` )", true);
+               
             }
             else
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "ERRORCLIENT", "msgbox(`Error`, `" + resp + "`, `error`)", true);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "ERRORCLIENT", "msgboxS(`Error`, `" + resp + "`, `error`, ` Clientes.aspx`)", true);
             }
+
+            
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
@@ -85,13 +97,22 @@ namespace WebMiTaller.Clientes
 
             if (recibe)
             {
-                Response.Redirect("Clientes.aspx");
+                
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "ERRORCLIENT", "msgboxS(`Error`, `" + resp + "`, `error`, ` Clientes.aspx`)", true);
+                
             }
             else
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "ERRORdelete", "msgbox(`Error`, `" + resp + "`, `error`)", true);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "ERRORdelete", "msgboxS(`Error`, `" + resp + "`, `error`, ` Clientes.aspx`)", true);
             }
 
+
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Session["id"] = gridAutos.SelectedRow.Cells[1].Text;
+            Response.Redirect("../Auto/AccionesAuto.aspx");
         }
     }
 }
