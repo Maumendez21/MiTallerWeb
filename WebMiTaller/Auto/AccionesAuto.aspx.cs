@@ -92,7 +92,7 @@ namespace WebMiTaller.Auto
             recibe = objLogAuto.UpdateAuto(temp, id, ref resp);
             if (recibe)
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "successUpdate", "msgboxS(`Actualizadp`, `" + resp + "`, `success`, ` Autos.aspx`)", true);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "successUpdate", "msgboxS(`Actualizado`, `" + resp + "`, `success`, ` Autos.aspx`)", true);
             }
             else
             {
@@ -108,7 +108,7 @@ namespace WebMiTaller.Auto
 
             if (recibe)
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "success", "msgboxS(`Correct`, `" + resp + "`, `success`, ` Autos.aspx`)", true);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "success", "msgboxS(`Eliminado`, `" + resp + "`, `success`, ` Autos.aspx`)", true);
 
             }
             else

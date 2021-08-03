@@ -98,12 +98,12 @@ namespace WebMiTaller.Clientes
             if (recibe)
             {
                 
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "ERRORCLIENT", "msgboxS(`Error`, `" + resp + "`, `error`, ` Clientes.aspx`)", true);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "ERRORCLIENT", "msgboxS(`Elimiado`, `" + resp + "`, `error`, ` Clientes.aspx`)", true);
                 
             }
             else
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "ERRORdelete", "msgboxS(`Error`, `" + resp + "`, `error`, ` Clientes.aspx`)", true);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "ERRORdelete", "msgboxS(`Error`, `Puede que este usuario tenga autos registrados.`, `error`, ` Clientes.aspx`)", true);
             }
 
 
