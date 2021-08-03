@@ -37,7 +37,7 @@
           <a class="nav-link" href="../Clientes/Clientes.aspx">Clientes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Autos</a>
+          <a class="nav-link" href="../Auto/Autos.aspx">Autos</a>
         </li>
           <li class="nav-item">
           <a class="nav-link" href="../Mecanico/Mecanico.aspx">Mecanicos</a>
@@ -92,8 +92,21 @@
 
                 <label for="txtDetalles" style="font-weight: bold">Detalles:</label>
                 <asp:TextBox CssClass="form-control" ID="txtDetail" runat="server"></asp:TextBox>
-                <label for="txtGarantia" style="font-weight: bold">Garantía:</label>
-                <asp:TextBox CssClass="form-control" ID="txtGar" runat="server"></asp:TextBox>
+                <label for="txtGarantia" style="font-weight: bold">Garantía (meses):</label>
+                <asp:DropDownList CssClass="form-select" ID="txtGarantia" runat="server" AutoPostBack="True" OnSelectedIndexChanged="txtGarantia_SelectedIndexChanged">
+                    <asp:ListItem>1</asp:ListItem>
+                    <asp:ListItem>2</asp:ListItem>
+                    <asp:ListItem>3</asp:ListItem>
+                    <asp:ListItem>4</asp:ListItem>
+                    <asp:ListItem>5</asp:ListItem>
+                    <asp:ListItem>6</asp:ListItem>
+                    <asp:ListItem>7</asp:ListItem>
+                    <asp:ListItem>8</asp:ListItem>
+                    <asp:ListItem>9</asp:ListItem>
+                    <asp:ListItem>10</asp:ListItem>
+                    <asp:ListItem>11</asp:ListItem>
+                    <asp:ListItem>12</asp:ListItem>
+                </asp:DropDownList>
                 <label for="dateSalida" style="font-weight: bold">Fecha de Entrega:</label>
                 <asp:TextBox CssClass="form-control" ID="txtFecha" runat="server" style="color:red" ReadOnly="True"></asp:TextBox>
                 

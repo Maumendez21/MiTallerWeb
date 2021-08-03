@@ -45,7 +45,7 @@
                  <asp:Button CssClass="btn btn-danger mb-3" ID="btnRegresarAuto" runat="server" Text="Regresar" OnClick="btnRegresarAuto_Click" />
                  <%--<asp:Button CssClass="btn btn-primary mb-3" ID="btnAddAuto" runat="server" Text="Agregar Auto" OnClick="btnAddAuto_Click" />--%>
 
-                 <asp:GridView ID="GridAutos" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridAutos_SelectedIndexChanged" Width="1272px">
+                 <asp:GridView ID="GridAutos" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridAutos_SelectedIndexChanged" Width="1100px">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                      <Columns>
                          <asp:CommandField ShowSelectButton="True" AccessibleHeaderText="Ver Auto" SelectText="Ver Auto" />

@@ -132,5 +132,27 @@ namespace WebMiTaller.Auto
 
             Response.Redirect("../Reparaciones/DetalleReparacion.aspx");
         }
+
+        protected void gridReparaciones_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string message = "";
+            DateTime output;
+            int garanty, id_Reparacion = 0;
+
+            Reparacion rp = null;
+            id_Reparacion = Convert.ToInt32(gridReparaciones.SelectedRow.Cells[1].Text);
+            rp = objLogAuto.getReparacionT(id_Reparacion, ref message);
+          
+            if (rp != null)
+            {
+                garanty = (Convert.ToInt32(rp.Garantia) * 30);
+                output = rp.salida.AddDays(garanty);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "Correcto", "msgboxS(`Periodo de garantia valida hasta: `, `" + output.ToString() + "`, `success`, `AccionesAuto.aspx` )", true);
+            }
+            else
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "ERRORdelete", "msgboxS(`Error`, `Oh,oh! error inesperado :(`, `error`), `AccionesAuto.aspx`", true);
+            }
+        }
     }
 }

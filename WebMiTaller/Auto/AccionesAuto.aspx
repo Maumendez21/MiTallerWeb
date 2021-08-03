@@ -7,7 +7,7 @@
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <link rel="stylesheet" href="../css/sweetalert2.min.css" />
 <script src="../js/sweetalert2.all.min.js" ></script>
-<script src="../js/index.js"></script>
+<script src="../js/indexj.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </head>
@@ -92,7 +92,7 @@
                         <h4>Revisiones activas</h4>
                     </div>
                     <div class="card-body" >
-                        <asp:GridView ID="gridRevisiones" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="gridRevisiones_SelectedIndexChanged" Width="1168px">
+                        <asp:GridView  CssClass="form-control" ID="gridRevisiones" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="gridRevisiones_SelectedIndexChanged">
                             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                             <Columns>
                                 <asp:CommandField SelectText="Ver Revision" ShowSelectButton="True" />
@@ -113,7 +113,7 @@
                     Revisiones.
                   </div>
                 </div>
-                <
+                
             </div>
         </div>
 
@@ -124,7 +124,7 @@
                         <h4>Reparaciones realizadas</h4>
                     </div>
                     <div class="card-body" >
-                        <asp:GridView ID="gridReparaciones" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="1207px">
+                        <asp:GridView CssClass="form-control" ID="gridReparaciones" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="gridReparaciones_SelectedIndexChanged">
                             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                             <EditRowStyle BackColor="#999999" />
                             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -136,13 +136,16 @@
                             <SortedAscendingHeaderStyle BackColor="#506C8C" />
                             <SortedDescendingCellStyle BackColor="#FFFDF8" />
                             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                            <Columns>
+                                <asp:CommandField SelectText="Consultar Periodo de Garantía" ShowSelectButton="True" />
+                            </Columns>
                         </asp:GridView>
                     </div>
                     <div class="card-footer text-muted">
                     Revisiones.
                   </div>
                 </div>
-                <
+                
             </div>
         </div>
     </form>

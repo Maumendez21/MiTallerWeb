@@ -182,7 +182,7 @@ namespace WebMiTaller.Revisiones
             DateTime fecha = DateTime.Now;
             Revision temp = new Revision
             {
-                entrada = fecha.ToString(),
+                entrada = fecha,
                 falla = txtFalla.Text,
                 diagnostico = txtDiagnostico.Text,
                 autorizacion = false,

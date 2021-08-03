@@ -16,10 +16,10 @@ namespace ClassLogicaNegocioTaller
     {
         //Cadena de Conexión Mauro
         //private AccesoSQL db = new AccesoSQL(@"Server=DESKTOP-10SGSAI\SQLEXPRESS;Database=MiTaller2021;Integrated Security=true;");
-        private AccesoSQL db = new AccesoSQL(@"Server=LAPTOP-IK2MC2K0\SQLEXPRESS;Database=MiTaller2021;Integrated Security=true;");
+        //private AccesoSQL db = new AccesoSQL(@"Server=LAPTOP-IK2MC2K0\SQLEXPRESS;Database=MiTaller2021;Integrated Security=true;");
 
         //Cadena de Conexión David
-        //private AccesoSQL db = new AccesoSQL(@"Server=LAPTOP-822RV6A8;Database=MiTaller2021;Integrated Security=true;");
+        private AccesoSQL db = new AccesoSQL(@"Server=LAPTOP-822RV6A8;Database=MiTaller2021;Integrated Security=true;");
 
         //Cadena de Conexión Juan
         //private AccesoSQL db = new AccesoSQL(@"Server=DESKTOP-FFJP8C6;Database=MiTaller2021;Integrated Security=true;");
@@ -310,11 +310,18 @@ namespace ClassLogicaNegocioTaller
             }
             return salida;
         }
+
+        //GET REPARACIONES AUTO //
         public DataTable getReparacionesAutoSet(string id, ref string msgSalida)
         {
-            string query1 = "select id_Revision, Entrada, Falla, diagnostico, Modelo, placas, Mecanico.Nombre as Mecanico from Revision " +
-                "INNER JOIN Auto ON Revision.Auto = Auto.Id_Auto " +
-                "INNER JOIN Mecanico ON Revision.Mecanico = Mecanico.id_Tecnico WHERE Auto = "+id+" AND Revision.Autorizacion=1";
+            //INNER JOIN PARA VER MAS DETALLES DEL AUTO REPARADO Y SI TIENE REPARACIÓN HECHA, NOS MUESTRA LA INFORMACIÓN
+            string query1 = " SELECT id_Reparacion, Detalles, Garantia, Salida, Modelo, placas, Mecanico.Nombre as Mecanico, Cliente.Nombre as Dueño from Reparacion " +
+                            " INNER JOIN Revision as rev on rev.id_Revision = Reparacion.Fk_Revision " +
+                            " INNER JOIN Auto as aut on aut.Id_Auto = rev.Auto " +
+                            " INNER JOIN Mecanico on Mecanico.id_Tecnico = rev.Mecanico " +
+                            " INNER JOIN Cliente on Cliente.id_cliente = aut.dueño " +
+                            " where aut.Id_Auto = " + id + " and rev.Autorizacion = 1;";
+
             DataTable salida = null;
             DataSet contenedor = null;
             contenedor = db.ConsultaDS(query1, db.AbrirConexion(ref msgSalida), ref msgSalida);
@@ -324,5 +331,57 @@ namespace ClassLogicaNegocioTaller
             }
             return salida;
         }
+
+
+        //GET GARANTY
+        //OBTENEMOS LOS MESES DE GARANTÍA QUE TIENE UNA REPARACIÓN
+        public Reparacion getReparacionT(int idRep, ref string message)
+        {
+            Reparacion response = null;
+            
+
+            SqlConnection cnTemp = null;
+            string query1 = "SELECT * FROM Reparacion Where id_Reparacion = " + idRep;
+
+            cnTemp = db.AbrirConexion(ref message);
+            SqlDataReader atrapaDatos = null;
+
+            atrapaDatos = db.ConsultarReader(query1, cnTemp, ref message);
+
+            if (atrapaDatos != null)
+            {
+               
+                while (atrapaDatos.Read())
+                {
+                    response = new Reparacion
+                    {
+
+                        Id_Reparacion = (int)atrapaDatos[0],
+                        Detalles = (string)atrapaDatos[1],
+                        Garantia = (string)atrapaDatos[2],
+                        salida = (DateTime)atrapaDatos[3],
+                        FK_Revision = (int)atrapaDatos[4]
+
+
+                    };
+                }
+                
+            }
+            else
+            {
+                response = null;
+            }
+
+            cnTemp.Close();
+            cnTemp.Dispose();
+
+            return response;
+
+
+
+        }
+
+        
+
     }
 }
