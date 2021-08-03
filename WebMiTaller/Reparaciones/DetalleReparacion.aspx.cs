@@ -67,7 +67,7 @@ namespace WebMiTaller.Reparaciones
             Reparacion aux = new Reparacion
             {
                 Detalles = txtDetail.Text,
-                Garantia = txtGar.Text,
+                Garantia = (string)ViewState["garanty"],
                 salida = fecha,
                 FK_Revision = idRev
             };
@@ -96,6 +96,11 @@ namespace WebMiTaller.Reparaciones
         {
             //Regresamos al inicio de la pagina de Mecanicos
             Response.Redirect("../index.aspx");
+        }
+
+        protected void txtGarantia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ViewState["garanty"] = txtGarantia.SelectedValue.ToString();
         }
     }
 }

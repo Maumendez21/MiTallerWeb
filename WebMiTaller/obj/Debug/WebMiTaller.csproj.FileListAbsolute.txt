@@ -165,3 +165,4 @@ D:\Backend\MiTallerWeb\WebMiTaller\obj\Debug\WebMiTaller.csproj.CoreCompileInput
 D:\Backend\MiTallerWeb\WebMiTaller\obj\Debug\WebMiTaller.csproj.CopyComplete
 D:\Backend\MiTallerWeb\WebMiTaller\obj\Debug\WebMiTaller.dll
 D:\Backend\MiTallerWeb\WebMiTaller\obj\Debug\WebMiTaller.pdb
+C:\Users\davedrew\Desktop\MiTallerWeb\WebMiTaller\obj\Debug\WebMiTaller.csprojAssemblyReference.cache

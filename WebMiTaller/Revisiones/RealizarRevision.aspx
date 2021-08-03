@@ -30,7 +30,7 @@
     <div class="collapse navbar-collapse"  id="navbarNav">
       <ul class="navbar-nav ms-4" >
         <li class="nav-item">
-          <a class="nav-link" href="Clientes.aspx">Clientes</a>
+          <a class="nav-link" href="../Clientes/Clientes.aspx">Clientes</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../Auto/Autos.aspx">Autos</a>
