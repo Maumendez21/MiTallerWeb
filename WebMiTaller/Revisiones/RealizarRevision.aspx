@@ -48,7 +48,8 @@
         <div class="row mt-4">
             <h4>Iniciar Revisión</h4>
 
-            <div class="col-md-6" >
+            <div class="col-md-4" >
+                <p style="color: red">Si no existe el carro, registralo aquí.</p>
                 <div class="card text-center">
                     <div class="card-header">
                     <h4>Registrar Auto</h4>
@@ -69,12 +70,29 @@
                         <a href="../Clientes/AgregarCliente.aspx" >Si el cliente es nuevo registralo aquí.</a>
                     </div>
                      <div class="card-footer text-muted">
-                    Recuerda no dejar recuadros vacíos
+                         Si vas a seleccionar un auto ya existente omite este formulario.
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-6 mt-1" >
+            <div class="col-md-4" >
+                <p style="color: red">Si ya existe el carro seleccionalo.</p>
+                <div class="card text-center">
+                    <div class="card-header">
+                        <h4>Seleccionar Auto</h4>
+                    </div>
+                    <div class="card-body">
+                        Auto:
+                        <asp:DropDownList CssClass="form-select" ID="dropAutos" runat="server" AutoPostBack="True" OnSelectedIndexChanged="dropAutos_SelectedIndexChanged"></asp:DropDownList>
+                    </div>
+                     <div class="card-footer text-muted">
+                        Si vas a registrar el carro omite este formulario.
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-4 mt-1" >
                 <div class="card text-center">
                     <div class="card-header">
                     <h4>Revisión</h4>

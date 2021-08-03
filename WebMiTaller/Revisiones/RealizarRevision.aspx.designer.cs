@@ -78,6 +78,15 @@ namespace WebMiTaller.Revisiones
         protected global::System.Web.UI.WebControls.DropDownList dropCliente;
 
         /// <summary>
+        /// Control dropAutos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dropAutos;
+
+        /// <summary>
         /// Control txtFalla.
         /// </summary>
         /// <remarks>

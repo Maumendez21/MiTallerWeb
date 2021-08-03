@@ -55,7 +55,7 @@ namespace WebMiTaller.Mecanico
             if (flg)
             {
                 this.ClientScript.RegisterStartupScript(this.GetType(), "RESPONSETRUE", "msgboxS(`Correcto`, `" + _mssg + "`, `success`, ` Mecanico.aspx`)", true);
-               
+                Response.Redirect("Mecanico.aspx");
             }
             else
             {

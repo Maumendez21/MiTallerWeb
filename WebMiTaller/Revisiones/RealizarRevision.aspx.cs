@@ -36,6 +36,7 @@ namespace WebMiTaller.Revisiones
                 cargarMarcas();
                 cargarClientes();
                 cargarMecanicos();
+                cargarAutos();
             }
             else
             {
@@ -59,6 +60,23 @@ namespace WebMiTaller.Revisiones
                 foreach (ClassCapaEntidades.Mecanico item in listRecibe)
                 {
                     dropMecanico.Items.Add(new ListItem(item.Nombre, item.id_Tecnico.ToString()));
+                }
+
+            }
+        }
+        private void cargarAutos()
+        {
+            List<ClassCapaEntidades.Auto> listRecibe = null;
+            string msg = "";
+            listRecibe = objLogAuto.getAuto(ref msg);
+
+            if (listRecibe != null)
+            {
+                dropAutos.Items.Clear();
+                dropAutos.Items.Add(new ListItem("Selecciona un Auto", "0"));
+                foreach (ClassCapaEntidades.Auto item in listRecibe)
+                {
+                    dropAutos.Items.Add(new ListItem(item.Modelo, item.Id_Auto.ToString()));
                 }
 
             }
@@ -128,6 +146,16 @@ namespace WebMiTaller.Revisiones
                         Page.ClientScript.RegisterStartupScript(this.GetType(), "errorRev", "msgboxS(`Error`, `" + msg + "`, `error`, `../index.aspx` )", true);
                     }
                 }
+            }else
+            {
+                if (revision(Convert.ToInt32(ViewState["auto"]), ref msg))
+                {
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "revision", "msgboxS(`Correcto`, `" + msg + "`, `success`,  `../index.aspx`)", true);
+                }
+                else
+                {
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "errorRev", "msgboxS(`Error`, `" + msg + "`, `error`, `../index.aspx` )", true);
+                }
             }
 
 
@@ -151,9 +179,10 @@ namespace WebMiTaller.Revisiones
 
         private Boolean revision(int idAuto, ref string msg)
         {
+            DateTime fecha = DateTime.Now;
             Revision temp = new Revision
             {
-                entrada = DateTime.Now,
+                entrada = fecha.ToString(),
                 falla = txtFalla.Text,
                 diagnostico = txtDiagnostico.Text,
                 autorizacion = false,
@@ -176,6 +205,11 @@ namespace WebMiTaller.Revisiones
         protected void dropMecanico_SelectedIndexChanged(object sender, EventArgs e)
         {
             ViewState["mecanico"] = dropMecanico.SelectedValue.ToString();
+        }
+
+        protected void dropAutos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ViewState["auto"] = dropAutos.SelectedValue.ToString();
         }
     }
 }

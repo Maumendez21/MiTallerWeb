@@ -30,3 +30,14 @@ C:\MiTallerWeb\ClassLogicaNegocioTaller\obj\Debug\ClassLogicaNegocioTaller.cspro
 C:\MiTallerWeb\ClassLogicaNegocioTaller\obj\Debug\ClassLogicaNegocioTaller.csproj.CopyComplete
 C:\MiTallerWeb\ClassLogicaNegocioTaller\obj\Debug\ClassLogicaNegocioTaller.dll
 C:\MiTallerWeb\ClassLogicaNegocioTaller\obj\Debug\ClassLogicaNegocioTaller.pdb
+D:\Backend\MiTallerWeb\ClassLogicaNegocioTaller\bin\Debug\ClassLogicaNegocioTaller.dll
+D:\Backend\MiTallerWeb\ClassLogicaNegocioTaller\bin\Debug\ClassLogicaNegocioTaller.pdb
+D:\Backend\MiTallerWeb\ClassLogicaNegocioTaller\bin\Debug\ClassAccesoDatos.dll
+D:\Backend\MiTallerWeb\ClassLogicaNegocioTaller\bin\Debug\ClassCapaEntidades.dll
+D:\Backend\MiTallerWeb\ClassLogicaNegocioTaller\bin\Debug\ClassAccesoDatos.pdb
+D:\Backend\MiTallerWeb\ClassLogicaNegocioTaller\bin\Debug\ClassCapaEntidades.pdb
+D:\Backend\MiTallerWeb\ClassLogicaNegocioTaller\obj\Debug\ClassLogicaNegocioTaller.csprojAssemblyReference.cache
+D:\Backend\MiTallerWeb\ClassLogicaNegocioTaller\obj\Debug\ClassLogicaNegocioTaller.csproj.CoreCompileInputs.cache
+D:\Backend\MiTallerWeb\ClassLogicaNegocioTaller\obj\Debug\ClassLogicaNegocioTaller.csproj.CopyComplete
+D:\Backend\MiTallerWeb\ClassLogicaNegocioTaller\obj\Debug\ClassLogicaNegocioTaller.dll
+D:\Backend\MiTallerWeb\ClassLogicaNegocioTaller\obj\Debug\ClassLogicaNegocioTaller.pdb

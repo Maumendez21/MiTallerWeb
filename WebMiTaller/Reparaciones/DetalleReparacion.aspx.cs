@@ -88,16 +88,8 @@ namespace WebMiTaller.Reparaciones
             else
             {
                 //En caso contrario mandamos un mensaje de error 
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "reparacionF", "msgboxS(`Error`, `" + message + "`, `error`, `../index.aspx` )", true);
-                
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "reparacionF", "msgboxS(`Error`, `" + message + "`, `error`, `../index.aspx` )", true);      
             }
-
-
-
-
-
-
-
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
