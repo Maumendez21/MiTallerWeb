@@ -14,6 +14,7 @@ namespace WebMiTaller
     {
         LogicaRevision objLogRev = null;
         LogicaReparacion objLogRep = null;
+        LogicaAuto objLogAuto = null;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack == false)
@@ -22,12 +23,15 @@ namespace WebMiTaller
                 Session["objLogRev"] = objLogRev;
                 objLogRep = new LogicaReparacion();
                 Session["objLogRep"] = objLogRep;
+                objLogAuto = new LogicaAuto();
+                Session["objLogAuto"] = objLogAuto;
                 cargarRevisiones();
             }
             else
             {
                 objLogRev = (LogicaRevision)Session["objLogRev"];
                 objLogRep = (LogicaReparacion)Session["objLogRep"];
+                objLogAuto = (LogicaAuto)Session["objLogAuto"];
             }
             cargarReparaciones();
         }
@@ -60,7 +64,24 @@ namespace WebMiTaller
 
         protected void GridReparacion_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Session["id"] = GridReparacion.SelectedRow.Cells[1].Text;
+            string message = "";
+            DateTime output;
+            int garanty, id_Reparacion = 0;
+
+            Reparacion rp = null;
+            id_Reparacion = Convert.ToInt32(GridReparacion.SelectedRow.Cells[1].Text);
+            rp = objLogAuto.getReparacionT(id_Reparacion, ref message);
+
+            if (rp != null)
+            {
+                garanty = (Convert.ToInt32(rp.Garantia) * 30);
+                output = rp.salida.AddDays(garanty);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "Correcto", "msgboxS(`Periodo de garantia valida hasta: `, `" + output.ToString() + "`, `success`, `Index.aspx` )", true);
+            }
+            else
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "ERRORdelete", "msgboxS(`Error`, `Oh,oh! error inesperado :(`, `error`), `Index.aspx`", true);
+            }
         }
     }
 }

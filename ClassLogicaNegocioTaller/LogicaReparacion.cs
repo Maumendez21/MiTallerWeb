@@ -110,9 +110,12 @@ namespace ClassLogicaNegocioTaller
         }
         public DataTable getReparacion(ref string msgSalida)
         {
-            string query1 = "select id_Revision, Entrada, Falla, diagnostico, Modelo, placas, Mecanico.Nombre as Mecanico from Revision " +
-                "INNER JOIN Auto ON Revision.Auto = Auto.Id_Auto " +
-                "INNER JOIN Mecanico ON Revision.Mecanico = Mecanico.id_Tecnico";
+            string query1 = "SELECT id_Reparacion, Detalles, Garantia, Salida, Modelo, placas, Mecanico.Nombre as Mecanico, Cliente.Nombre as Dueño from Reparacion " +
+                            " INNER JOIN Revision as rev on rev.id_Revision = Reparacion.Fk_Revision " +
+                            " INNER JOIN Auto as aut on aut.Id_Auto = rev.Auto " +
+                            " INNER JOIN Mecanico on Mecanico.id_Tecnico = rev.Mecanico " +
+                            " INNER JOIN Cliente on Cliente.id_cliente = aut.dueño " +
+                            " where rev.Autorizacion = 1"; 
             DataTable salida = null;
             DataSet contenedor = null;
             contenedor = db.ConsultaDS(query1, db.AbrirConexion(ref msgSalida), ref msgSalida);
