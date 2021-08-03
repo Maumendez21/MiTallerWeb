@@ -127,37 +127,7 @@ namespace WebMiTaller.Revisiones
 
         protected void btnRealizar_Click(object sender, EventArgs e)
         {
-            int recibeId;
-            string msg = "";
             
-            
-            if (insertarAuto(ref msg))
-            {
-                recibeId = objLogAuto.devuelveUltimoId(ref msg);
-                if (recibeId != 0)
-                {
-                    if (revision(recibeId, ref msg))
-                    {
-                        Page.ClientScript.RegisterStartupScript(this.GetType(), "revision", "msgboxS(`Correcto`, `" + msg + "`, `success`,  `../index.aspx`)", true);
-                       
-                    }
-                    else
-                    {
-                        Page.ClientScript.RegisterStartupScript(this.GetType(), "errorRev", "msgboxS(`Error`, `" + msg + "`, `error`, `../index.aspx` )", true);
-                    }
-                }
-            }else
-            {
-                if (revision(Convert.ToInt32(ViewState["auto"]), ref msg))
-                {
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "revision", "msgboxS(`Correcto`, `" + msg + "`, `success`,  `../index.aspx`)", true);
-                }
-                else
-                {
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "errorRev", "msgboxS(`Error`, `" + msg + "`, `error`, `../index.aspx` )", true);
-                }
-            }
-
 
         }
         
@@ -210,6 +180,42 @@ namespace WebMiTaller.Revisiones
         protected void dropAutos_SelectedIndexChanged(object sender, EventArgs e)
         {
             ViewState["auto"] = dropAutos.SelectedValue.ToString();
+        }
+
+        protected void Revi_Click(object sender, EventArgs e)
+        {
+            int recibeId;
+            string msg = "";
+
+
+            if (insertarAuto(ref msg))
+            {
+                recibeId = objLogAuto.devuelveUltimoId(ref msg);
+                if (recibeId != 0)
+                {
+                    if (revision(recibeId, ref msg))
+                    {
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "revision", "msgboxS(`Correcto`, `" + msg + "`, `success`,  `../index.aspx`)", true);
+
+                    }
+                    else
+                    {
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "errorRev", "msgboxS(`Error`, `" + msg + "`, `error`, `../index.aspx` )", true);
+                    }
+                }
+            }
+            else
+            {
+                if (revision(Convert.ToInt32(ViewState["auto"]), ref msg))
+                {
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "revision", "msgboxS(`Correcto`, `" + msg + "`, `success`,  `../index.aspx`)", true);
+                }
+                else
+                {
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "errorRev", "msgboxS(`Error`, `" + msg + "`, `error`, `../index.aspx` )", true);
+                }
+            }
+
         }
     }
 }

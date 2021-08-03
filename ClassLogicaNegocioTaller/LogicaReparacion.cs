@@ -4,7 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Data;
 using System.Data.SqlClient;
+
+
 using ClassAccesoDatos;
 using ClassCapaEntidades;
 
@@ -18,10 +21,10 @@ namespace ClassLogicaNegocioTaller
 
 
         //Cadena de Conexión David
-        private AccesoSQL db = new AccesoSQL(@"Server=LAPTOP-822RV6A8;Database=MiTaller2021;Integrated Security=true;");
+        //private AccesoSQL db = new AccesoSQL(@"Server=LAPTOP-822RV6A8;Database=MiTaller2021;Integrated Security=true;");
 
         //Cadena de Conexión Juan
-        //private AccesoSQL db = new AccesoSQL(@"Server=DESKTOP-FFJP8C6;Database=MiTaller2021;Integrated Security=true;");
+        private AccesoSQL db = new AccesoSQL(@"Server=DESKTOP-FFJP8C6;Database=MiTaller2021;Integrated Security=true;");
 
 
 
@@ -90,6 +93,34 @@ namespace ClassLogicaNegocioTaller
 
             return flag;
 
+        }
+        public DataTable getRevisionDataSet(ref string msgSalida)
+        {
+            string query1 = "select id_Revision, Entrada, Falla, diagnostico, Modelo, placas, Mecanico.Nombre as Mecanico from Revision " +
+                "INNER JOIN Auto ON Revision.Auto = Auto.Id_Auto " +
+                "INNER JOIN Mecanico ON Revision.Mecanico = Mecanico.id_Tecnico WHERE Revision.Autorizacion = 0";
+            DataTable salida = null;
+            DataSet contenedor = null;
+            contenedor = db.ConsultaDS(query1, db.AbrirConexion(ref msgSalida), ref msgSalida);
+            if (contenedor != null)
+            {
+                salida = contenedor.Tables[0];
+            }
+            return salida;
+        }
+        public DataTable getReparacion(ref string msgSalida)
+        {
+            string query1 = "select id_Revision, Entrada, Falla, diagnostico, Modelo, placas, Mecanico.Nombre as Mecanico from Revision " +
+                "INNER JOIN Auto ON Revision.Auto = Auto.Id_Auto " +
+                "INNER JOIN Mecanico ON Revision.Mecanico = Mecanico.id_Tecnico";
+            DataTable salida = null;
+            DataSet contenedor = null;
+            contenedor = db.ConsultaDS(query1, db.AbrirConexion(ref msgSalida), ref msgSalida);
+            if (contenedor != null)
+            {
+                salida = contenedor.Tables[0];
+            }
+            return salida;
         }
 
     }

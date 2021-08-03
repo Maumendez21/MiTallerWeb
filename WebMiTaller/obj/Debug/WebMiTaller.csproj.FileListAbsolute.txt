@@ -118,7 +118,6 @@ C:\MiTallerWeb\WebMiTaller\bin\ClassCapaEntidades.pdb
 C:\MiTallerWeb\WebMiTaller\bin\ClassLogicaNegocioTaller.pdb
 C:\MiTallerWeb\WebMiTaller\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\MiTallerWeb\WebMiTaller\bin\ClassAccesoDatos.pdb
-C:\MiTallerWeb\WebMiTaller\obj\Debug\WebMiTaller.csprojAssemblyReference.cache
 C:\MiTallerWeb\WebMiTaller\obj\Debug\WebMiTaller.csproj.CoreCompileInputs.cache
 C:\MiTallerWeb\WebMiTaller\obj\Debug\WebMiTaller.csproj.CopyComplete
 C:\MiTallerWeb\WebMiTaller\obj\Debug\WebMiTaller.dll
@@ -166,3 +165,4 @@ D:\Backend\MiTallerWeb\WebMiTaller\obj\Debug\WebMiTaller.csproj.CopyComplete
 D:\Backend\MiTallerWeb\WebMiTaller\obj\Debug\WebMiTaller.dll
 D:\Backend\MiTallerWeb\WebMiTaller\obj\Debug\WebMiTaller.pdb
 C:\Users\davedrew\Desktop\MiTallerWeb\WebMiTaller\obj\Debug\WebMiTaller.csprojAssemblyReference.cache
+C:\MiTallerWeb\WebMiTaller\obj\Debug\WebMiTaller.csprojAssemblyReference.cache
