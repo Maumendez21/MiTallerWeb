@@ -122,8 +122,8 @@
                     <h4>Acciones</h4>
                     </div>
                     <div class="card-body">
-                        <asp:Button CssClass="btn btn-primary mt-3 mb-3" ID="Button1" runat="server" Text="Realizar Revisión" OnClick="btnRealizar_Click" />
-                        <asp:Button CssClass="btn btn-danger mt-3 mb-3" ID="Button2" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" />
+                        <asp:Button CssClass="btn btn-primary mt-3 mb-3" ID="Revi" runat="server" Text="Realizar Revisión" OnClick="Revi_Click"  />
+                        <asp:Button CssClass="btn btn-danger mt-3 mb-3" ID="Button2" runat="server" Text="Cancelar"  />
                   </div>
                   <div class="card-footer text-muted">
                     Estas acciones no podran anularse una vez realizadas
