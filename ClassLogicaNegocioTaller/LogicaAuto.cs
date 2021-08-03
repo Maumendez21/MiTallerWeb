@@ -16,9 +16,10 @@ namespace ClassLogicaNegocioTaller
     {
         //Cadena de Conexión Mauro
         //private AccesoSQL db = new AccesoSQL(@"Server=DESKTOP-10SGSAI\SQLEXPRESS;Database=MiTaller2021;Integrated Security=true;");
+        private AccesoSQL db = new AccesoSQL(@"Server=LAPTOP-IK2MC2K0\SQLEXPRESS;Database=MiTaller2021;Integrated Security=true;");
 
         //Cadena de Conexión David
-        private AccesoSQL db = new AccesoSQL(@"Server=LAPTOP-822RV6A8;Database=MiTaller2021;Integrated Security=true;");
+        //private AccesoSQL db = new AccesoSQL(@"Server=LAPTOP-822RV6A8;Database=MiTaller2021;Integrated Security=true;");
 
         //Cadena de Conexión Juan
         //private AccesoSQL db = new AccesoSQL(@"Server=DESKTOP-FFJP8C6;Database=MiTaller2021;Integrated Security=true;");
@@ -282,9 +283,38 @@ namespace ClassLogicaNegocioTaller
 
         public DataTable getAutoDataSet(ref string msgSalida)
         {
-            string query1 = "select Id_Auto, Marca, Modelo, año, color, placas, nombre from Auto " +
+            string query1 = "select Id_Auto, Marca, Modelo, año, color, placas,  Cliente.Nombre as Dueño from Auto " +
                 "INNER JOIN Marcas ON Auto.F_Marca = Marcas.id_Marca " +
                 "INNER JOIN Cliente ON Auto.dueño = Cliente.id_cliente";
+            DataTable salida = null;
+            DataSet contenedor = null;
+            contenedor = db.ConsultaDS(query1, db.AbrirConexion(ref msgSalida), ref msgSalida);
+            if (contenedor != null)
+            {
+                salida = contenedor.Tables[0];
+            }
+            return salida;
+        }
+
+        public DataTable getRevisionesAutoSet(string id, ref string msgSalida)
+        {
+            string query1 = "select id_Revision, Entrada, Falla, diagnostico, Modelo, placas, Mecanico.Nombre as Mecanico from Revision " +
+                "INNER JOIN Auto ON Revision.Auto = Auto.Id_Auto " +
+                "INNER JOIN Mecanico ON Revision.Mecanico = Mecanico.id_Tecnico WHERE Auto = "+id+" AND Revision.Autorizacion=0";
+            DataTable salida = null;
+            DataSet contenedor = null;
+            contenedor = db.ConsultaDS(query1, db.AbrirConexion(ref msgSalida), ref msgSalida);
+            if (contenedor != null)
+            {
+                salida = contenedor.Tables[0];
+            }
+            return salida;
+        }
+        public DataTable getReparacionesAutoSet(string id, ref string msgSalida)
+        {
+            string query1 = "select id_Revision, Entrada, Falla, diagnostico, Modelo, placas, Mecanico.Nombre as Mecanico from Revision " +
+                "INNER JOIN Auto ON Revision.Auto = Auto.Id_Auto " +
+                "INNER JOIN Mecanico ON Revision.Mecanico = Mecanico.id_Tecnico WHERE Auto = "+id+" AND Revision.Autorizacion=1";
             DataTable salida = null;
             DataSet contenedor = null;
             contenedor = db.ConsultaDS(query1, db.AbrirConexion(ref msgSalida), ref msgSalida);

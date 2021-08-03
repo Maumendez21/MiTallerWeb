@@ -22,6 +22,7 @@ namespace WebMiTaller.Clientes
                 Session["objLogClient"] = objLogClient;
                 id = Session["id"].ToString();
                 cargarCliente();
+                cargarAutos();
             }
             else
             {
@@ -30,6 +31,13 @@ namespace WebMiTaller.Clientes
             }
 
             
+        }
+
+        private void cargarAutos()
+        {
+            string msg = "";
+            gridAutos.DataSource = objLogClient.getAutosClient(id, ref msg);
+            gridAutos.DataBind();
         }
 
         public void cargarCliente()
@@ -99,6 +107,12 @@ namespace WebMiTaller.Clientes
             }
 
 
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Session["id"] = gridAutos.SelectedRow.Cells[1].Text;
+            Response.Redirect("../Auto/AccionesAuto.aspx");
         }
     }
 }

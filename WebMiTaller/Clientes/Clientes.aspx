@@ -31,7 +31,7 @@
           <a class="nav-link" href="Clientes.aspx">Clientes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Autos</a>
+          <a class="nav-link" href="../Auto/Autos.aspx">Autos</a>
         </li>
           <li class="nav-item">
           <a class="nav-link" href="../Mecanico/Mecanico.aspx">Mecanicos</a>

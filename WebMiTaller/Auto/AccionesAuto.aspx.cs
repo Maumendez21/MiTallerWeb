@@ -24,6 +24,9 @@ namespace WebMiTaller.Auto
                 id = Session["id"].ToString();
                 cargarAuto();
                 cargarMarcas();
+
+                cargarRevisiones();
+                cargarReparaciones();
             }
             else
             {
@@ -48,6 +51,19 @@ namespace WebMiTaller.Auto
                 //dropMarcas.Items.Add(new ListItem("Selecciona una marca", "0",));
 
             }
+        }
+
+        private void cargarRevisiones()
+        {
+            string msg = "";
+            gridRevisiones.DataSource = objLogAuto.getRevisionesAutoSet(id, ref msg);
+            gridRevisiones.DataBind();
+        }
+        private void cargarReparaciones()
+        {
+            string msg = "";
+            gridReparaciones.DataSource = objLogAuto.getReparacionesAutoSet(id, ref msg);
+            gridReparaciones.DataBind();
         }
         public void cargarAuto()
         {
@@ -108,6 +124,13 @@ namespace WebMiTaller.Auto
         protected void dropMarca_SelectedIndexChanged(object sender, EventArgs e)
         {
             ViewState["marca"] = dropMarca.SelectedValue.ToString();
+        }
+
+        protected void gridRevisiones_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Session["FK_Revision"] = gridRevisiones.SelectedRow.Cells[1].Text;
+
+            Response.Redirect("../Reparaciones/DetalleReparacion.aspx");
         }
     }
 }

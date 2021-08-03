@@ -57,52 +57,78 @@
             <div class="col-md-6" >
 
                 <div class="card text-center">
-  <div class="card-header">
-    <h4>Cliente Encontrado</h4>
-  </div>
-  <div class="card-body">
-                <label for="txtNombre" style="font-weight: bold">Nombre:</label>
-                 <asp:TextBox CssClass="form-control" ID="txtNombre" runat="server"></asp:TextBox>
-                <label for="txtApellidoP" style="font-weight: bold">Apellido Paterno:</label>
-                <asp:TextBox CssClass="form-control" ID="txtApellidoP" runat="server"></asp:TextBox>
-                <label for="txtApellidoM" style="font-weight: bold">Apellido Materno:</label>
-                <asp:TextBox CssClass="form-control" ID="txtApellidoM" runat="server"></asp:TextBox>
-                <label for="txtTelefono" style="font-weight: bold">Telefono:</label>
-                <asp:TextBox CssClass="form-control" ID="txtTelefono" runat="server"></asp:TextBox>
-               <label for="txtCorreo" style="font-weight: bold">Correo Electronico:</label>
-               <asp:TextBox CssClass="form-control" ID="txtCorreo" runat="server"></asp:TextBox>
-               <label for="txtTelefonoEmpresa" style="font-weight: bold">Telefono de Empresa:</label>
-               <asp:TextBox CssClass="form-control" ID="txtTelefonoEmpresa" runat="server"></asp:TextBox>
-               <label for="txtCorreoEmpresa" style="font-weight: bold">Correo de Empresa:</label>
-                <asp:TextBox CssClass="form-control" ID="txtCorreoEmpresa" runat="server"></asp:TextBox>
+                  <div class="card-header">
+                    <h4>Cliente Encontrado</h4>
+                  </div>
+                  <div class="card-body">
+                                <label for="txtNombre" style="font-weight: bold">Nombre:</label>
+                                 <asp:TextBox CssClass="form-control" ID="txtNombre" runat="server"></asp:TextBox>
+                                <label for="txtApellidoP" style="font-weight: bold">Apellido Paterno:</label>
+                                <asp:TextBox CssClass="form-control" ID="txtApellidoP" runat="server"></asp:TextBox>
+                                <label for="txtApellidoM" style="font-weight: bold">Apellido Materno:</label>
+                                <asp:TextBox CssClass="form-control" ID="txtApellidoM" runat="server"></asp:TextBox>
+                                <label for="txtTelefono" style="font-weight: bold">Telefono:</label>
+                                <asp:TextBox CssClass="form-control" ID="txtTelefono" runat="server"></asp:TextBox>
+                               <label for="txtCorreo" style="font-weight: bold">Correo Electronico:</label>
+                               <asp:TextBox CssClass="form-control" ID="txtCorreo" runat="server"></asp:TextBox>
+                               <label for="txtTelefonoEmpresa" style="font-weight: bold">Telefono de Empresa:</label>
+                               <asp:TextBox CssClass="form-control" ID="txtTelefonoEmpresa" runat="server"></asp:TextBox>
+                               <label for="txtCorreoEmpresa" style="font-weight: bold">Correo de Empresa:</label>
+                                <asp:TextBox CssClass="form-control" ID="txtCorreoEmpresa" runat="server"></asp:TextBox>
 
-  </div>
-  <div class="card-footer text-muted">
-    Recuerda no dejar recuadros vacíos
-  </div>
-</div>
+                  </div>
+                  <div class="card-footer text-muted">
+                    Recuerda no dejar recuadros vacíos
+                  </div>
+                </div>
 
-            </div>
-            <div class="col-md-6" >
+                            </div>
+                            <div class="col-md-6" >
 
-                <div class="card text-center">
-    <div class="card-header">
-    <h4>Acciones</h4>
-    </div>
-    <div class="card-body">
-     <asp:Button CssClass="btn btn-primary m-2" ID="btnActualizar" runat="server" Text="Actualizar" OnClick="btnActualizar_Click" />
-     <asp:Button CssClass="btn btn-danger m-2" ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />   
+                                <div class="card text-center">
+                    <div class="card-header">
+                    <h4>Acciones</h4>
+                    </div>
+                    <div class="card-body">
+                     <asp:Button CssClass="btn btn-primary m-2" ID="btnActualizar" runat="server" Text="Actualizar" OnClick="btnActualizar_Click" />
+                     <asp:Button CssClass="btn btn-danger m-2" ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />   
                   
-  </div>
-  <div class="card-footer text-muted">
-    Estas acciones no podran anularse una vez realizadas
-  </div> 
-  </div>
-        </div>
-
-        <div class="row" >
+                  </div>
+                  <div class="card-footer text-muted">
+                    Estas acciones no podran anularse una vez realizadas
+                  </div> 
+                  </div>
+                        </div>
+            </div>
+        <div class="row mt-4 mb-4" >
             <div class="col-md-12" >
-                <h3>Autos</h3>
+                <div class="card text-center">
+                    <div class="card-header">
+                    <h4>Autos registrados por este cliente:</h4>
+                    </div>
+                    <div class="card-body">
+
+                        <asp:GridView ID="gridAutos" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="1204px">
+                            <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                            <Columns>
+                                <asp:CommandField SelectText="Ver Auto" ShowSelectButton="True" />
+                            </Columns>
+                            <EditRowStyle BackColor="#999999" />
+                            <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                            <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                            <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                            <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                            <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                            <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                            <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                            <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                        </asp:GridView>
+
+
+                    </div>
+                </div>
+
             </div>
         </div>
     </form>
