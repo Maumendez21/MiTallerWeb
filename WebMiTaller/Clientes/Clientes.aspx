@@ -38,6 +38,11 @@
         </li>
       </ul>
     </div>
+       <span class="navbar-text" style="font-weight:bold; font-style:italic; color=: white !important;">
+  
+           <p class="card-text text-white">Tu taller de confianza!</p>
+
+      </span>
   </div>
     </nav>
 

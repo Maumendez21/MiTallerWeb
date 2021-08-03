@@ -7,7 +7,7 @@
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
  <link rel="stylesheet" href="../css/sweetalert2.min.css" />
 <script src="../js/sweetalert2.all.min" ></script>
-<script src="../js/indexj.js"></script>
+<script src="../js/index.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
     <title></title>
@@ -44,6 +44,11 @@
         </li>
       </ul>
     </div>
+       <span class="navbar-text" style="font-weight:bold; font-style:italic; color=: white !important;">
+  
+           <p class="card-text text-white">Tu taller de confianza!</p>
+
+      </span>
   </div>
     </nav>
 
@@ -51,7 +56,8 @@
     <form id="form1"  class="container" runat="server">
         <div class="row mt-3">
             <h4>Detalles de Revisión</h4>
-            <p>En este apartado podras consultar la información y detalle de la revisión del auto</p>
+    <asp:Label ID="lba" runat="server" text="En este apartado podras consultar la información y detalle de la revisión del auto"></asp:Label>
+            
                     <div class="col-md-12">
                          <div class="card text-center">
                             <div class="card-header">
@@ -81,7 +87,8 @@
                 </div>
 
                 <div class="row mt-3">
-                    <p style="color:red;">Si desea continuar y dar de alta la reparación del auto rellene el siguiente formulario: </p>
+                    <asp:Label ID="lbAux" runat="server" text="Si desea continuar y dar de alta la reparación del auto rellene el siguiente formulario:"></asp:Label>
+            
                     <div class="col-md-12" >
 
                 <div class="card text-center">
@@ -94,6 +101,7 @@
                 <asp:TextBox CssClass="form-control" ID="txtDetail" runat="server"></asp:TextBox>
                 <label for="txtGarantia" style="font-weight: bold">Garantía (meses):</label>
                 <asp:DropDownList CssClass="form-select" ID="txtGarantia" runat="server" AutoPostBack="True" OnSelectedIndexChanged="txtGarantia_SelectedIndexChanged">
+                    <asp:ListItem Value="Selecciona meses">Selecciona meses</asp:ListItem>
                     <asp:ListItem>1</asp:ListItem>
                     <asp:ListItem>2</asp:ListItem>
                     <asp:ListItem>3</asp:ListItem>
@@ -114,7 +122,7 @@
               
 
 
-     <asp:Button CssClass="btn btn-primary m-2" ID="btnRR" runat="server" Text="Registrar Reparación Completada" OnClick="btnRR_Click"  />
+     <asp:Button CssClass="btn btn-primary m-2" ID="btnRR" runat="server" Text="Registrar Reparación Completada" OnClick="btnRR_Click"  /> <br />
      <asp:Button CssClass="btn btn-danger m-2" ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" />   
                   
   </div>
